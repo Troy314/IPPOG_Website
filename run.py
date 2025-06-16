@@ -128,9 +128,8 @@ print("This code enable the user to tranform csv file from https://docs.google.c
 print("To a formated, almost ready to past on the https://ippog-resources-portal.web.cern.ch/ website, md file")
 print("In case of problem, don't hesitate to contact hector.pillot [at] proton.me\n")
 
-#file = input("> Enter the csv file name without the extension .csv : ")
-
-file = "exemple_file"
+file = input("> Enter the csv file name without the extension .csv : ")
+# file = "exemple_file"
 
 print(f'The input file is : {pathlib.Path().resolve()}/{file}.csv')
 csv_to_md(file+".csv", "output_markdown")
