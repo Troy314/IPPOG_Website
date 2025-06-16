@@ -17,8 +17,15 @@ def csv_to_md(csv_filename, output_dir):
             if not row:
                 continue  # Skip empty rows
 
-            ID = input("\n> Enter {'" + row[1] + "'} project ID : ") # Give an ID to the project if should be the same as the name of the webpage and the image
-            print({row[1]}," is now defined as - PROJECT-" + ID + " -")
+            # Define the project ID, ideally, it should be 
+
+            if row[0]!="":
+                ID = row[0]
+            else :
+                print("\n#############################################\n# ERROR please define an ID in the database #\n#############################################")
+                print(f"\n/!\\ no ID for project \"{row[1]}\" /!\\")
+                break
+            print(f"\n\"{row[1]}\" is now defined as - PROJECT-" + ID + " -")
 
             filename = "PROJECT-" + ID  + ".md"  # Create filename from first cell
             filepath = os.path.join(output_dir, filename)
@@ -31,12 +38,16 @@ def csv_to_md(csv_filename, output_dir):
 
                 mdfile.write(f"---\n\n")
                 mdfile.write(f"\media & text <run the command manually with the \"show media on the right option\">")
-                mdfile.write(f"\n<Featured image> {row[3]}")
                 mdfile.write(f"\n# {row[1]}") # Name of the project in English
 
                 if row[2]!="":
                     mdfile.write(f"\n## {row[2]}") # Name of the project in it's original language (optional)
-                mdfile.write(f"\n<ragged right>Credit : {row[4]}") # Credit for the image
+                
+                if row[3]!="":
+                    mdfile.write(f"\n<Featured image> {row[3]}")
+                    mdfile.write(f"\n<ragged right>Credit : {row[4]}") # Credit for the image
+                else : 
+                    print("/!\\ no registered Featured image /!\\")
                 mdfile.write(f"\n\n---\n")
 
                 ##############
@@ -63,7 +74,6 @@ def csv_to_md(csv_filename, output_dir):
 
                 mdfile.write(f"<b>Related IPPOG Collaboration member :</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
                 contact = next(iter({row[8]})).split(', ')
-                print(row[8])
                 for i in range (len(contact)):
                     mdfile.write(f"- [{contact[i]}]({members_dico[contact[i]]})\n") # Call the URL from the dictionary
 
@@ -85,7 +95,6 @@ def csv_to_md(csv_filename, output_dir):
 
                 ressource = next(iter({row[15]})).split('\n') # Separate ressources and write them as a list of hyperlink
                 if(ressource!=['']):
-                    print(ressource)
                     mdfile.write(f"\n## Files & Resources")
 
                     for j in range (len(ressource)):
