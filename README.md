@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://ippog-resources-portal.web.cern.ch/">
-    <img src="media/IPPOG_logo.png" width="400" alt="Godot Engine logo">
+    <img src="media/IPPOG_logo.png" alt="IPPOG logo">
   </a>
 </p>
 
