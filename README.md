@@ -43,7 +43,6 @@ Categories and tags works in the following way
 | - | - |
 
 ## Work in progress
-- Add the possibility to manually choose at which line of the database the code create a markdown
 - Make clear <TODO> banners
 - Make the code run through the `State` property
 

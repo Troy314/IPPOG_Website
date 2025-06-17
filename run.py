@@ -12,15 +12,18 @@ def csv_to_md(csv_filename, output_dir):
     with open(csv_filename, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         headers = next(reader)  # Read the first row as headers
-
-        begin = input("> Enter the ID of the first project to run (if no ID is selected, all project will be run through) : ")
-        print(f"Projects starting from ID \"PROJECT-{begin}\" will be formated")
+        
+        begin = input("\n> Enter the ID of the first project to run (if no ID is selected, all project will be run through) : ")
+        if begin =="":
+            print("All project will be formated as no ID were given")
+        else :
+            print(f"Projects starting from ID \"PROJECT-{begin}\" will be formated")
 
         for row in reader:
             if not row:
                 continue  # Skip empty rows
 
-            if begin !=0 and int(row[0].split("PROJECT-")[1]) < int(begin):
+            if begin !="" and int(row[0]) < int(begin):
                 continue # Skip stating project
 
             if row[0]!="":
@@ -133,8 +136,8 @@ print("This code enable the user to tranform csv file from https://docs.google.c
 print("To a formated, almost ready to past on the https://ippog-resources-portal.web.cern.ch/ website, md file")
 print("In case of problem, don't hesitate to contact hector.pillot [at] proton.me\n")
 
-file = input("> Enter the csv file name without the extension .csv : ")
-#file = "exemple_file"
+#file = input("> Enter the csv file name without the extension .csv : ")
+file = "exemple_file"
 
 print(f'The input file is : {pathlib.Path().resolve()}/{file}.csv')
 csv_to_md(file+".csv", "output_markdown")
