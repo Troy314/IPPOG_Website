@@ -36,5 +36,5 @@ The format of the database is the following :
 
 Categories and tags works in the following way
 
-| ![Topics category](https://raw.githubusercontent.com/Troy314/IPPOG_Website/57cf8f82785f045f34e196c9b5a576432455445b/media/Topics_category.svg?token=APQ2GQJXXXKCHOYW3QILF5TIKFTL6) | ![Types category](https://raw.githubusercontent.com/Troy314/IPPOG_Website/57cf8f82785f045f34e196c9b5a576432455445b/media/Types_category.svg?token=APQ2GQL3XW4ZJIMIWGK7X33IKFTR6) |
+| ![Topics category](media/Topics_category.svg) | ![Types category](media/Types_category.svg) |
 | - | - |
