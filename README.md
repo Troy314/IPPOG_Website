@@ -1,5 +1,11 @@
 # IPPOG Ressource database formatting tool
-![IPPOG Logo](https://raw.githubusercontent.com/Troy314/IPPOG_Website/refs/heads/main/media/IPPOG_logo.png?token=GHSAT0AAAAAADFX5Z5NKA6OKBW3LSZ33N2E2CRM5DQ)
+
+<p align="center">
+  <a href="https://ippog-resources-portal.web.cern.ch/">
+    <img src="media/IPPOG_logo.png" width="400" alt="Godot Engine logo">
+  </a>
+</p>
+
 ## Database formatting
 
 The goal of this code is to facilitate the work of the IPPOG core team in uploading projects to the Wordpress [IPPOG Ressource Portal](https://ippog-resources-portal.web.cern.ch/).
