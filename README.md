@@ -1,4 +1,5 @@
 # IPPOG Ressource database formatting tool
+![IPPOG Logo](https://raw.githubusercontent.com/Troy314/IPPOG_Website/refs/heads/main/media/IPPOG_logo.png?token=GHSAT0AAAAAADFX5Z5NKA6OKBW3LSZ33N2E2CRM5DQ)
 ## Database formatting
 
 The goal of this code is to facilitate the work of the IPPOG core team in uploading projects to the Wordpress [IPPOG Ressource Portal](https://ippog-resources-portal.web.cern.ch/).
@@ -28,3 +29,6 @@ The format of the database is the following :
 - Remove the unnecessary parts
 
 Categories and tags works in the following way
+
+| ![Topics category](https://raw.githubusercontent.com/Troy314/IPPOG_Website/57cf8f82785f045f34e196c9b5a576432455445b/media/Topics_category.svg?token=APQ2GQJXXXKCHOYW3QILF5TIKFTL6) | ![Types category](https://raw.githubusercontent.com/Troy314/IPPOG_Website/57cf8f82785f045f34e196c9b5a576432455445b/media/Types_category.svg?token=APQ2GQL3XW4ZJIMIWGK7X33IKFTR6) |
+| - | - |
