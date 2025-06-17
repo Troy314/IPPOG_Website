@@ -23,14 +23,17 @@ The format of the database is the following :
 
 
 ## Dependancies
+WIP
 
 ## Running
+WIP
 
 ## What need to be done manually on the wordpress website
-- Add the "Featured image"
-- Create a "media & text" block with the title(s) and the featured image
-- Add the abstract
-- Add the categories and tag
+What needs to be done manually appears in the markdown file as `<TODO>`
+- Create a "media & text" block with the title and the featured image
+- Upload the "Featured image"
+- Create a "excerpt" block
+- Add the categories and tag to the post properties
 - Add the "categories" and "tag" blocks
 - Remove the unnecessary parts
 
@@ -38,3 +41,8 @@ Categories and tags works in the following way
 
 | ![Topics category](media/Topics_category.svg) | ![Types category](media/Types_category.svg) |
 | - | - |
+
+## Work in progress
+- Add the possibility to manually choose at which line of the database the code create a markdown
+- Make clear <TODO> banners
+- Make the code run through the `State` property
