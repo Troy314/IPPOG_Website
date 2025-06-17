@@ -33,6 +33,6 @@ In preparation (updated 2025-06-17)
 /tags <command need to be input manually>
 
 <Manually add the categories and tags then remove everything bellow>
-PROJECT-2
+PROJECT-PROJECT-2
 Categories : Broad public /  / Art Science / Hands-on Activity
 Tags :  /  / 

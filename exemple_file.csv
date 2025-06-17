@@ -15,8 +15,8 @@ Conference:URL","Important resources like website or publication and URL
 Please use the format : 
 Name1:URL1 / Name2:URL2 / ",Type of the project,Topic of the project *,Audiences,Languages of the project,"Contact private for the core team
 To reach you if needed, it will not appear on the website ",,,,,
-1,Name of the project in English,Name of the project in it's original language,Featured image for the success story,Credit for the featured image,Abstract of the Project (about 500 characters),"Author1,Afficiation1
+PROJECT-1,Name of the project in English,Name of the project in it's original language,Featured image for the success story,Credit for the featured image,Abstract of the Project (about 500 characters),"Author1,Afficiation1
 Author2,Affiliation2","entity1
 Entity2",ALICE Collaboration,public@mail.com,private@mail.com,In preparation,Name of the conference,Year,URL,"ResourceName1:URL1
 ResourceName2:URL2",Book and Publication,Art Science,Broad public,English,tag1,tag2,tag3
-2,Name,,,,Abstract,Test : Author1 Afficiation1 ,test : entity1 ee,"ALICE Collaboration, ATLAS Collaboration",contact_form.fr,,In preparation,,,,,Hands-on Activity,Art Science,Broad public,,,,
+PROJECT-2,Name,,,,Abstract,Test : Author1 Afficiation1 ,test : entity1 ee,"ALICE Collaboration, ATLAS Collaboration",contact_form.fr,,In preparation,,,,,Hands-on Activity,Art Science,Broad public,,,,
