@@ -43,7 +43,6 @@ Categories and tags works in the following way
 | - | - |
 
 ## Work in progress
-- Make clear <TODO> banners
 - Make the code run through the `State` property
 
 ## Contact
