@@ -44,15 +44,16 @@ def csv_to_md(csv_filename, output_dir):
                 ###########
 
                 mdfile.write(f"---\n\n")
-                mdfile.write(f"\media & text <run the command manually with the \"show media on the right option\">")
+                mdfile.write(f"<TODO run the command `\\media & text` manually with the \"show media on the right option\">")
+                mdfile.write(f"<TODO run the command `\\title` in the left column and \"featured image\" in the right>")
                 mdfile.write(f"\n# {row[1]}") # Name of the project in English
 
                 if row[2]!="":
                     mdfile.write(f"\n## {row[2]}") # Name of the project in it's original language (optional)
                 
                 if row[3]!="":
-                    mdfile.write(f"\n<Featured image> {row[3]}")
-                    mdfile.write(f"\n<ragged right>Credit : {row[4]}") # Credit for the image
+                    mdfile.write(f"\n<TODO Featured image is > {row[3]}")
+                    mdfile.write(f"\n<TODO ragged right > Credit : {row[4]}") # Credit for the image
                 else : 
                     print("/!\\ no registered Featured image /!\\")
                 mdfile.write(f"\n\n---\n")
@@ -113,14 +114,14 @@ def csv_to_md(csv_filename, output_dir):
                 ## Resources & Tags ##
                 ######################
 
-                mdfile.write(f"\n/categories <command need to be input manually>\n/tags <command need to be input manually>")
+                mdfile.write(f"\n< TODO Run commande `/categories`> \n< TODO Run commande `/tags`>")
 
                 ###########
                 ## Bonus ##
                 ###########
 
                 ### Should not appear on the website, the PROJECT-ID should be used for the URL slug, Categories and Tags sould be added to the corresponding menu
-                mdfile.write(f"\n\n<Manually add the categories and tags then remove everything bellow>")
+                mdfile.write(f"\n\n<TODO Manually add the categories and tags then remove everything bellow>")
                 mdfile.write(f"\nPROJECT-{ID}")
                 mdfile.write(f"\nCategories : {row[18]} / {row[19]} / {row[17]} / {row[16]}")
                 mdfile.write(f"\nTags : {row[20]} / {row[21]} / {row[22]}")
@@ -136,8 +137,8 @@ print("This code enable the user to tranform csv file from https://docs.google.c
 print("To a formated, almost ready to past on the https://ippog-resources-portal.web.cern.ch/ website, md file")
 print("In case of problem, don't hesitate to contact hector.pillot [at] proton.me\n")
 
-#file = input("> Enter the csv file name without the extension .csv : ")
-file = "exemple_file"
+file = input("> Enter the csv file name without the extension .csv : ")
+#file = "exemple_file"
 
 print(f'The input file is : {pathlib.Path().resolve()}/{file}.csv')
 csv_to_md(file+".csv", "output_markdown")
