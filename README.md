@@ -46,3 +46,6 @@ Categories and tags works in the following way
 - Add the possibility to manually choose at which line of the database the code create a markdown
 - Make clear <TODO> banners
 - Make the code run through the `State` property
+
+## Contact
+If you see any problem, don't hesitate to contact me at hector.pillot [at] proton.me
