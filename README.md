@@ -11,7 +11,8 @@ The database.csv is then ran through the `run.py` code to produce markdown files
 
 The format of the database is the following : 
 
-| ID | Name of the project in English | Name of the project in it's original language | Featured Image | Credit of the featured image | Abstract | Author names,affiliation | Supporting entities | Related IPPOG member | Public contact | Private contact | Name of the conference | Year of the conference | Presentation Documents | Project Status | Type | Topics | Audiences | Langage | Sub Type | Sub Topics | Wordpress page | State | 
+| ID | Name of the project in English | Name of the project in it's original language | Featured Image | Credit of the featured image | Abstract | Author names,affiliation | Supporting entities | Related IPPOG member | Public contact | Private contact | Name of the conference | Year of the conference | Presentation Documents | Project Status | Type | Topics | Audiences | Langage | Sub Type | Sub Topics | Wordpress page | State |
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 
 
 ## Dependancies
