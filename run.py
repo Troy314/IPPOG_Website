@@ -69,8 +69,9 @@ def csv_to_md(csv_filename, output_dir):
                 mdfile.write(f"<b>Authors :</b>\n{row[6]}".replace(':',' : ').replace('\n','\n- ')) # Write Authors name and afficiations as a list
                 mdfile.write(f"\n\n")
 
-                mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace(':',' : ').replace('\n','\n- ')) # Write supporting entities as a list
-                mdfile.write(f"\n\n")
+                # Supporting entities remove for now
+                #mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace(':',' : ').replace('\n','\n- ')) # Write supporting entities as a list
+                #mdfile.write(f"\n\n")
 
                 mdfile.write(f"<b>Related IPPOG Collaboration member :</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
                 contact = next(iter({row[8]})).split(', ')

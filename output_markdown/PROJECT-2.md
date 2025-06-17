@@ -15,9 +15,6 @@ Abstract
 <b>Authors  : </b>
 - Test  :  Author1 Afficiation1 
 
-<b>Supported by  : </b>
-- test  :  entity1 ee
-
 <b>Related IPPOG Collaboration member :</b>
 - [ALICE Collaboration](https://ippog.org/members/alice-collaboration)
 - [ATLAS Collaboration](https://ippog.org/members/atlas-collaboration)
@@ -28,7 +25,7 @@ Abstract
 ---
 
 ## Project status
-In preparation (updated 2025-06-16)
+In preparation (updated 2025-06-17)
 
 ---
 

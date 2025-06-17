@@ -21,10 +21,6 @@ Abstract of the Project (about 500 characters)
 - Author1,Afficiation1
 - Author2,Affiliation2
 
-<b>Supported by  : </b>
-- entity1
-- Entity2
-
 <b>Related IPPOG Collaboration member :</b>
 - [ALICE Collaboration](https://ippog.org/members/alice-collaboration)
 
@@ -34,7 +30,7 @@ Abstract of the Project (about 500 characters)
 ---
 
 ## Project status
-In preparation (updated 2025-06-16)
+In preparation (updated 2025-06-17)
 
 ---
 
