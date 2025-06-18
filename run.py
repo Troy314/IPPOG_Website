@@ -67,7 +67,7 @@ def csv_to_md(csv_filename, output_dir):
 
                 mdfile.write(f"\n## Abstract\n{row[5]}") # Write the abstract
                 if row[13]!="":
-                    mdfile.write(f"\n\n[{row[11]} ({row[12]})]({row[13]})") # Write the url of the presentation slides as a hyperlink with [Conference (date)] as text
+                    mdfile.write(f"\n\n- [{row[11]} ({row[12]})]({row[13]})") # Write the url of the presentation slides as a hyperlink with [Conference (date)] as text
                 mdfile.write(f"\n\n---\n")
 
                 #############
