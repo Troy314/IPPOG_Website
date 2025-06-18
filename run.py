@@ -47,8 +47,8 @@ def csv_to_md(csv_filename, output_dir):
                 ###########
 
                 mdfile.write(f"---\n\n")
-                mdfile.write(f"<TODO run the command `\\media & text` manually with the \"show media on the right option\">")
-                mdfile.write(f"<TODO run the command `\\title` in the left column and \"featured image\" in the right>")
+                mdfile.write(f"<TODO run the command `/media & text` manually with the \"show media on the right option\">")
+                mdfile.write(f"<TODO run the command `/title` in the left column and \"featured image\" in the right>")
                 mdfile.write(f"\n# {row[1]}") # Name of the project in English
 
                 if row[2]!="":
