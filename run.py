@@ -111,7 +111,7 @@ def csv_to_md(csv_filename, output_dir):
 
                     for j in range (len(ressource)):
                         if ressource[j]!="":
-                            mdfile.write(f"\n- [{ressource[j].replace(' ','').split(':http')[0]}](http{ressource[j].replace(' ','').split(':http')[1]})")
+                            mdfile.write(f"\n- [{ressource[j].replace(' :',':').replace(': ',':').split(':http')[0]}](http{ressource[j].replace(' ','').split(':http')[1]})")
                     mdfile.write(f"\n\n---\n")
 
                 ######################
