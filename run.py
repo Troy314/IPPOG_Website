@@ -84,10 +84,11 @@ def csv_to_md(csv_filename, output_dir):
                 #mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace(':',' : ').replace('\n','\n- ')) # Write supporting entities as a list
                 #mdfile.write(f"\n\n")
 
-                mdfile.write(f"<b>Related IPPOG Collaboration member :</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
-                contact = next(iter({row[19]})).split(', ')
-                for i in range (len(contact)):
-                    mdfile.write(f"- [{contact[i]}]({members_dico[contact[i]]})\n") # Call the URL from the dictionary
+                if row[19] != "":
+                    mdfile.write(f"<b>Related IPPOG Collaboration member :</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
+                    contact = next(iter({row[19]})).split(', ')
+                    for i in range (len(contact)):
+                        mdfile.write(f"- [{contact[i]}]({members_dico[contact[i]]})\n") # Call the URL from the dictionary
 
                 mdfile.write(f"\n<b>Contact :</b>\n- {row[8]}".replace('@',' [at] ')) # Protect email by replacing @ with [at]
 
