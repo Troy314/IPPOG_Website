@@ -293,15 +293,15 @@ print("To a formated, almost ready to past on the https://ippog-resources-portal
 print("In case of problem, don't hesitate to contact hector.pillot [at] proton.me\n")
 
 print("Do you want to use Online mode (through Google API) or local mode (through csv file)?")
-flag = input("> Please input API or CSV:\n")
+flag = input("> Please input api or csv:\n")
 
-if flag == "CSV":
+if flag == "csv":
     file = input("> Enter the csv file name without the extension .csv : ")
 
     print(f'The input file is : {pathlib.Path().resolve()}/{file}.csv')
     csv_to_md(file+".csv", "output_markdown")
 
-elif flag == "API":
+elif flag == "api":
     json_to_md("output_markdown")
 
 else :
