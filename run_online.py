@@ -13,7 +13,8 @@ def json_to_md(output_dir):
     os.makedirs(output_dir, exist_ok=True)
 
     # Load Google Sheets API credentials
-    SERVICE_ACCOUNT_FILE = "ippog-466111-e8e5130144ad.json"  # Update with your JSON file
+    SERVICE_ACCOUNT_FILE = "YOURJSONFILE"  # Update with your JSON file
+    #SERVICE_ACCOUNT_FILE = "ippog-466111-e8e5130144ad.json"
     SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
     # Authenticate and create the client
