@@ -47,16 +47,17 @@ def csv_to_md(csv_filename, output_dir):
                 ###########
 
                 mdfile.write(f"---\n\n")
-                mdfile.write(f"<TODO run the command `/media & text` manually with the \"show media on the right option\">")
-                mdfile.write(f"<TODO run the command `/title` in the left column and \"featured image\" in the right>")
-                mdfile.write(f"\n# {row[1]}") # Name of the project in English
+                mdfile.write(f"[draft] run `/media & text` with the \"show media on the right\"")
+                mdfile.write(f"\n[draft] run `/title` in left column with {row[1]}") # Name of the project in English
+                mdfile.write(f"\n[draft] choose \"featured image\" in right")
 
                 if row[2]!="":
-                    mdfile.write(f"\n## {row[2]}") # Name of the project in it's original language (optional)
+                    mdfile.write(f"\n[draft] subtitle : {row[2]}") # Name of the project in it's original language (optional)
                 
                 if row[3]!="":
-                    mdfile.write(f"\n<TODO Featured image is > {row[3]}")
-                    mdfile.write(f"\n<TODO ragged right > Credit : {row[4]}") # Credit for the image
+                    mdfile.write(f"\n[draft] link to image : {row[3]}")
+                    mdfile.write(f"\n[draft] run ragged right for credit")
+                    mdfile.write(f"\nCredit : {row[4]}") # Credit for the image
                 else : 
                     print("/!\\ no registered Featured image /!\\")
                 mdfile.write(f"\n\n---\n")
@@ -122,17 +123,17 @@ def csv_to_md(csv_filename, output_dir):
                 ## Resources & Tags ##
                 ######################
 
-                mdfile.write(f"\n< TODO Run commande `/categories`> \n< TODO Run commande `/tags`>")
+                mdfile.write(f"\n[draft] run `/categories` \n[draft] run `/tags`")
 
                 ###########
                 ## Bonus ##
                 ###########
 
                 ### Should not appear on the website, the PROJECT-ID should be used for the URL slug, Categories and Tags sould be added to the corresponding menu
-                mdfile.write(f"\n\n<TODO Manually add the categories and tags then remove everything bellow>")
-                mdfile.write(f"\nPROJECT-{ID}")
-                mdfile.write(f"\nCategories : {row[17]} / {row[18]} / {row[16]} / {row[15]}")
-                mdfile.write(f"\nTags : {row[20]} / {row[21]}")
+                mdfile.write(f"\n\n[draft] Add the categories and tags bellow")
+                mdfile.write(f"\n[draft] PROJECT-{ID}")
+                mdfile.write(f"\n[draft] Categories : {row[17]} / {row[18]} / {row[16]} / {row[15]}")
+                mdfile.write(f"\n[draft] Tags : {row[20]} / {row[21]}")
 
             print(f"Created: {filepath}")
 

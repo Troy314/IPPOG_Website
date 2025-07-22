@@ -13,8 +13,8 @@ def json_to_md(output_dir):
     os.makedirs(output_dir, exist_ok=True)
 
     # Load Google Sheets API credentials
-    SERVICE_ACCOUNT_FILE = "YOURJSONFILE"  # Update with your JSON file
-    #SERVICE_ACCOUNT_FILE = "ippog-466111-e8e5130144ad.json"
+    #SERVICE_ACCOUNT_FILE = "YOURJSONFILE"  # Update with your JSON file
+    SERVICE_ACCOUNT_FILE = "ippog-466111-e8e5130144ad.json"
     SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
     # Authenticate and create the client
@@ -22,7 +22,7 @@ def json_to_md(output_dir):
     client = gspread.authorize(creds)
 
     # Open the Google Sheet by ID
-    SHEET_ID = "1x_SdxdlHwG8chH77WqrTAAgijY2XBY3nPIi2p3TKqzs"  # Replace with your actual sheet ID
+    SHEET_ID = "1x_SdxdlHwG8chH77WqrTAAgijY2XBY3nPIi2p3TKqzs"  # Sheet ID
     sheet = client.open_by_key(SHEET_ID).get_worksheet(0)  # Access the first worksheet
 
     data = sheet.get_all_records()
@@ -61,16 +61,17 @@ def json_to_md(output_dir):
             ###########
 
             mdfile.write(f"---\n\n")
-            mdfile.write(f"<TODO run the command `/media & text` manually with the \"show media on the right option\">")
-            mdfile.write(f"<TODO run the command `/title` in the left column and \"featured image\" in the right>")
-            mdfile.write(f"\n# {row["Name of the project in English"]}") # Name of the project in English
+            mdfile.write(f"[draft] run `/media & text` with the \"show media on the right\"")
+            mdfile.write(f"\n[draft] run `/title` in left column with {row["Name of the project in English"]}")
+            mdfile.write(f"\n[draft] choose \"featured image\" in right")
 
             if row["Name of the project in it's original language"]!="":
-                mdfile.write(f"\n## {row["Name of the project in it's original language"]}") # Name of the project in it's original language (optional)
+                mdfile.write(f"\n[draft] subtitle : {row["Name of the project in it's original language"]}") # Name of the project in it's original language (optional)
             
             if row["Featured Image"]!="":
-                mdfile.write(f"\n<TODO Featured image is > {row["Featured Image"]}")
-                mdfile.write(f"\n<TODO ragged right > Credit : {row["Credit of the featured image"]}") # Credit for the image
+                mdfile.write(f"\n[draft] link to image : {row["Featured Image"]}")
+                mdfile.write(f"\n[draft] run ragged right for credit")
+                mdfile.write(f"Credit : {row["Credit of the featured image"]}") # Credit for the image
             else : 
                 print("/!\\ no registered Featured image /!\\")
             mdfile.write(f"\n\n---\n")
@@ -136,17 +137,17 @@ def json_to_md(output_dir):
             ## Resources & Tags ##
             ######################
 
-            mdfile.write(f"\n< TODO Run commande `/categories`> \n< TODO Run commande `/tags`>")
+            mdfile.write(f"\n[draft] run `/categories` \n[draft] run `/tags`")
 
             ###########
             ## Bonus ##
             ###########
 
             ### Should not appear on the website, the PROJECT-ID should be used for the URL slug, Categories and Tags sould be added to the corresponding menu
-            mdfile.write(f"\n\n<TODO Manually add the categories and tags then remove everything bellow>")
-            mdfile.write(f"\nPROJECT-{ID}")
-            mdfile.write(f"\nCategories : {row["Audiences"]} / {row["Langage"]} / {row["Topics"]} / {row["Type"]}")
-            mdfile.write(f"\nTags : {row["Sub Types"]} / {row["Sub Topics"]}")
+            mdfile.write(f"\n\n[draft] Add the categories and tags bellow")
+            mdfile.write(f"\n[draft] PROJECT-{ID}")
+            mdfile.write(f"\n[draft] Categories : {row["Audiences"]} / {row["Langage"]} / {row["Topics"]} / {row["Type"]}")
+            mdfile.write(f"\n[draft] Tags : {row["Sub Types"]} / {row["Sub Topics"]}")
 
         print(f"Created: {filepath}")
 
@@ -158,8 +159,5 @@ print("#################################\n")
 print("This code enable the user to tranform online google-sheet file from https://docs.google.com/forms/d/e/1FAIpQLSckjdwv7daQZ8jv7D1wwx6mKeZo2Hp4hLGGmV8FT0VTthvOUg/viewform")
 print("To a formated, almost ready to past on the https://ippog-resources-portal.web.cern.ch/ website, md file")
 print("In case of problem, don't hesitate to contact hector.pillot [at] proton.me\n")
-
-print("Do you want to use Online mode (through Google API) or local mode (through csv file)?")
-flag = input("> Please input api or csv:\n")
 
 json_to_md("output_markdown")
