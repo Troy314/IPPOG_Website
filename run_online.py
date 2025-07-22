@@ -127,7 +127,7 @@ def json_to_md(output_dir):
 
                 for j in range (len(ressource)):
                     if ressource[j]!="":
-                        if len({ressource[j].replace(' :',':').replace(': ',':').split(':http')[0]}) == 2:
+                        if len(ressource[j].replace(' :',':').replace(': ',':').split(':http')) == 2:
                             mdfile.write(f"\n- [{ressource[j].replace(' :',':').replace(': ',':').split(':http')[0]}](http{ressource[j].replace(' ','').split(':http')[1]})")
                         else:
                             print("/!\\ ERROR WHILE WRITING RESOURCES /!\\\n")
