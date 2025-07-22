@@ -117,6 +117,8 @@ def csv_to_md(csv_filename, output_dir):
                                 mdfile.write(f"\n- [{ressource[j].replace(' :',':').replace(': ',':').split(':http')[0]}](http{ressource[j].replace(' ','').split(':http')[1]})")
                             else:
                                 print("/!\\ ERROR WHILE WRITING RESOURCES /!\\\n")
+                                print("problem happened at line: ",ressource[j].replace(' :',':').replace(': ',':').split(':http'),"\n")
+
                     mdfile.write(f"\n\n---\n")
 
                 ######################
