@@ -18,7 +18,7 @@ The user can either export the database as a csv file (see `exemple_file.csv`) a
 
 The flowchart detailing the upload process is as follows :
 
-![Flowchart](media/Flowchart.pdf)
+![Flowchart](media/Flowchart.svg)
 
 ## Dependencies
 *WIP*
