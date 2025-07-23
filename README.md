@@ -43,7 +43,14 @@ Categories and tags works in the following way
 | - | - |
 
 ## Work in progress
-- Make the code run through the `State` property
+- None
+
+## Data
+Some data about the projects currently on the website : 
+
+![Related members data](media/data/Related_members.svg)
+![Topics data](media/data/topics.svg)
+![Types data](media/data/types.svg)
 
 ## Contact
 If you see any problem, don't hesitate to contact me at hector.pillot [at] proton.me
