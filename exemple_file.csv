@@ -1,22 +1,3 @@
-Horodateur,Name of the project in English,Name of the project in it's original language,"Featured image for the success story
-
-Please submit a link to the image or a way for us to download it (via CERNbox, Drive, extract from a PDF file)",Credit for the featured image,Abstract of the Project (about 500 characters),"Authors of the project and affiliations separated with "" / "" 
-
-Please use the format : 
-Author1,Afficiation1 / Author2,Affiliation2 ","Supporting entities 
-
-Please use the format : 
-entity1 / entity2 / ",Related IPPOG member (if there is one),"Contact public(email or URL to a contact form) 
-It will appear on the website with the ""@"" symbol replaced by ""[ at ]""",Status of the project *,"Presentation slides from a conference 
-
-Please use the format : 
-Conference:URL","Important resources like website or publication and URL 
-
-Please use the format : 
-Name1:URL1 / Name2:URL2 / ",Type of the project,Topic of the project *,Audiences,Languages of the project,"Contact private for the core team
-To reach you if needed, it will not appear on the website ",,,,,
-1,Name of the project in English,Name of the project in it's original language,Featured image for the success story,Credit for the featured image,Abstract of the Project (about 500 characters),"Author1,Afficiation1
-Author2,Affiliation2","entity1
-Entity2",ALICE Collaboration,public@mail.com,private@mail.com,In preparation,Name of the conference,Year,URL,"ResourceName1:URL1
-ResourceName2:URL2",Book and Publication,Art Science,Broad public,English,tag1,tag2,tag3
-2,Name,,,,Abstract,Test : Author1 Afficiation1 ,test : entity1 ee,"ALICE Collaboration, ATLAS Collaboration",contact_form.fr,,In preparation,,,,,Hands-on Activity,Art Science,Broad public,,,,
+ID,Name of the project in English,Name of the project in it's original language,Featured Image,Credit of the featured image,Abstract,"Author names,affiliation",Supporting entities,Public contact,Private contact,Project Status,Name of the conference,Year of the conference,Presentation Documents,Other resources,Type,Topics,Audiences,Langage,Related IPPOG member,Sub Types,Sub Topics,Wordpress page,Status
+217,"An Art-Science exhibit for the LHCP19 conference (Puebla, Mexico)",,https://cernbox.cern.ch/,LHCP Conference web site,"In preparation for the LHCP Conference, few LHC scientists interacted remotely with a group of art students. The resulting exhibit was shown on the BUAP campus, in parallel with the conference.","Claire Adam, CNRS/IN2P3 Luis Flores Castillo, The Chinese University of Hong Kong Arturo Fernandez Tellez, BUAP",,email@cern.ch,,Done,EPS 2019,2019,https://indico.cern.ch/event/577856/contributions/3419429/attachments/1877341/3093754/ClaireAdam-OriginMexico.pdf,Benemérita Universidad Autónoma de Puebla (BUAP) web site: https://www.buap.mx/,Festival & Temporary event,Art Science,"Broad public, Scientific community",Spanish,Mexico,Temporary exhibition,Fine art,https://ippog-resources-portal.web.cern.ch/project-217,OK
+214,INFN ScienzaPerTutti: twenty years of science for society,,https://cernbox.cern.ch/,INFN,"ScienzaPerTutti is the INFN official website for communication and dissemination, born in 2002 with the aim of raising (or increase) interest and curiosity in people towards scientific topics, focusing on physics and INFN-related research topics. The project evolved, expanding its “offer” and involving schools and the public.",INFN Communication Office,,email@infn.it,,Ongoing,ICHEP 2022,2022,https://agenda.infn.it/event/28874/contributions/169269/attachments/94496/129699/ICHEPsxt.pdf,Website:https://scienzapertutti.infn.it,National Outreach program,"Matter & Forces, Universe",Broad public,Italian,Italy,,"Standard model of elementary particles, Nuclear & Atomic physics & radioactivity, Gravitational waves",https://ippog-resources-portal.web.cern.ch/project-214,OK
