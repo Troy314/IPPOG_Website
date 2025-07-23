@@ -17,7 +17,8 @@ The [Google Sheet extracted from it](https://docs.google.com/spreadsheets/d/1x_S
 The user can either export the database as a csv file (see `exemple_file.csv`) and run `run_local.py` or enable the Google API to directly work with the online database and run `run_online.py`. The code produces, for each line of the database, one markdown file in a directory named `output_markdown`. These files are already mostly formatted to be copy/pasted into the WordPress website.
 
 The flowchart detailing the upload process is as follows :
-*WIP*
+
+![Flowchart](media/Flowchart.pdf)
 
 ## Dependencies
 *WIP*
