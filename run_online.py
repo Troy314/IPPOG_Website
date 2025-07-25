@@ -62,6 +62,7 @@ def json_to_md(output_dir):
 
             mdfile.write(f"---\n\n")
             mdfile.write(f"[draft] title : {row["Name of the project in English"]}")
+            mdfile.write(f"\n[draft] ID : {ID}")
             mdfile.write(f"\n[draft] run `/media & text` with the \"show media on the right\"")
             mdfile.write(f"\n[draft] run `/title` in left column")
             mdfile.write(f"\n[draft] choose \"featured image\" in right column")

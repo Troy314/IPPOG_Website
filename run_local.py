@@ -48,6 +48,7 @@ def csv_to_md(csv_filename, output_dir):
 
                 mdfile.write(f"---\n\n")
                 mdfile.write(f"[draft] title : {row[1]}")
+                mdfile.write(f"\n[draft] ID : {row[0]}")
                 mdfile.write(f"\n[draft] run `/media & text` with the \"show media on the right\"")
                 mdfile.write(f"\n[draft] run `/title` in left column") # Name of the project in English
                 mdfile.write(f"\n[draft] choose \"featured image\" in right column")
