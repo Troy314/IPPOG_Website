@@ -58,7 +58,7 @@ def csv_to_md(csv_filename, output_dir):
                 
                 if row[3]!="":
                     mdfile.write(f"\n[draft] link to image : {row[3]}")
-                    mdfile.write(f"\n[draft] run ragged right for credit")
+                    mdfile.write(f"\n[draft] Align the credits to the righ, bellow the image")
                     mdfile.write(f"\nCredit : {row[4]}") # Credit for the image
                 else : 
                     print("/!\\ no registered Featured image /!\\")
