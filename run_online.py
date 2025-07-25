@@ -71,7 +71,7 @@ def json_to_md(output_dir):
             if row["Featured Image"]!="":
                 mdfile.write(f"\n[draft] link to image : {row["Featured Image"]}")
                 mdfile.write(f"\n[draft] run ragged right for credit")
-                mdfile.write(f"Credit : {row["Credit of the featured image"]}") # Credit for the image
+                mdfile.write(f"\nCredit : {row["Credit of the featured image"]}") # Credit for the image
             else : 
                 print("/!\\ no registered Featured image /!\\")
             mdfile.write(f"\n\n---\n")
