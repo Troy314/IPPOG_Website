@@ -73,7 +73,7 @@ def json_to_md(output_dir):
             if row["Featured Image"]!="":
                 mdfile.write(f"\n[draft] link to image : {row["Featured Image"]}")
                 mdfile.write(f"\n[draft] Align the credits to the righ, bellow the image")
-                mdfile.write(f"\nCredit : {row["Credit of the featured image"]}") # Credit for the image
+                mdfile.write(f"\n\nCredit : {row["Credit of the featured image"]}") # Credit for the image
             else : 
                 print("/!\\ no registered Featured image /!\\")
             mdfile.write(f"\n\n---\n")
@@ -148,7 +148,6 @@ def json_to_md(output_dir):
 
             ### Should not appear on the website, the PROJECT-ID should be used for the URL slug, Categories and Tags sould be added to the corresponding menu
             mdfile.write(f"\n\n[draft] Add the categories and tags bellow")
-            mdfile.write(f"\n[draft] PROJECT-{ID}")
             mdfile.write(f"\n[draft] Categories : {row["Audiences"]} / {row["Langage"]} / {row["Topics"]} / {row["Type"]}")
             mdfile.write(f"\n[draft] Tags : {row["Sub Types"]} / {row["Sub Topics"]}")
 
