@@ -29,7 +29,7 @@ The flowchart detailing the upload process is as follows :
 ## Uploading
 ![Uploading](media/How_to_upload.mp4)
 
-<iframe width="1680" height="736" src="https://www.youtube.com/embed/OQ6QYBG_MYU" title="How to upload project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Uploading](https://img.youtube.com/vi/OQ6QYBG_MYU/0.jpg)](https://www.youtube.com/watch?v=OQ6QYBG_MYU)
 
 ## What needs to be done manually on the WordPress website
 What needs to be done manually appears in the markdown file as `[draft]`
