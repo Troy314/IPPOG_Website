@@ -29,7 +29,7 @@ The flowchart detailing the upload process is as follows :
 ## Uploading
 ![Uploading](media/How_to_upload.mp4)
 
-![](html-preview.github.io/?url=https://github.com/Troy314/IPPOG_Website/blob/main/media/How_to_upload.mp4)
+![Uploading](https://youtu.be/OQ6QYBG_MYU)
 
 ## What needs to be done manually on the WordPress website
 What needs to be done manually appears in the markdown file as `[draft]`
