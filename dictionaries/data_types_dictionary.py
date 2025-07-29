@@ -1,0 +1,40 @@
+types_dico = {
+    "Book & Publication": 0,
+    "Festival & Temporary event": 0,
+    "Game": 0,
+    "Hands-on Activity": 0,
+    "National Outreach program": 0,
+    "Lab & Visitor center": 0,
+    "Online resource": 0,
+    "Open science": 0
+}
+
+subtypes_dico = {
+        "Book": 0,
+        "Comic book": 0,
+        "Magazine": 0,
+        "Children book": 0,    
+        "Festival": 0,
+        "Temporary exhibition": 0,
+        "HEP Conference": 0,
+        "Science show": 0,
+        "Board game": 0,
+        "Video game": 0,
+        "Escape game": 0,
+        "Activity": 0,
+        "Training & School project": 0,
+        "National outreach program": 0,
+        "Exhibit item": 0,
+        "Permanent exhibition": 0,
+        "Visit": 0,
+        "Laboratory": 0,
+        "Experiment": 0,
+        "Visual resource": 0,
+        "Content creator": 0,
+        "Educational material": 0,
+        "Animation": 0,
+        "Coping with COVID": 0,
+        "Participatory science": 0,
+        "Impact study": 0,
+        "Open data": 0
+    }

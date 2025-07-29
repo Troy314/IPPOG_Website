@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 import pathlib
 
-from member_dictionary import members_dico
+from dictionaries.member_dictionary import members_dico
 
 def csv_to_md(csv_filename, output_dir):
     # Ensure output directory exists

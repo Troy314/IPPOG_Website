@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 import pathlib
 
-from member_dictionary import members_dico
+from dictionaries.member_dictionary import members_dico
 
 import gspread
 from google.oauth2.service_account import Credentials
