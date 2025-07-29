@@ -26,9 +26,8 @@ The flowchart detailing the upload process is as follows :
 ## Running
 *WIP*
 
-## Uploading
-![Uploading](media/How_to_upload.mp4)
-
+## Upload process
+The upload process is detailed in the video bellow : 
 [![Uploading](https://img.youtube.com/vi/OQ6QYBG_MYU/0.jpg)](https://www.youtube.com/watch?v=OQ6QYBG_MYU)
 
 ## What needs to be done manually on the WordPress website
