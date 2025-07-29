@@ -26,8 +26,11 @@ The flowchart detailing the upload process is as follows :
 ## Running
 *WIP*
 
+## Uploading
+![Uploading](media/How_to_upload.mp4)
+
 ## What needs to be done manually on the WordPress website
-What needs to be done manually appears in the markdown file as `<TODO>`
+What needs to be done manually appears in the markdown file as `[draft]`
 - Create a "media & text" block with the title and the featured image
 - Upload the "Featured image"
 - Update the "excerpt"
