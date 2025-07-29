@@ -46,6 +46,7 @@ Categories and tags work in the following way:
 
 ## Data
 Some data about the projects currently on the website: 
+For more details, see `data_analysis_local.py` and `data_analysis_online.py`
 
 ![Related members data](media/data/Related_members.svg)
 ![Topics data](media/data/topics.svg)
