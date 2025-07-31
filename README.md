@@ -70,20 +70,16 @@ The upload process is detailed in the video bellow:
 ## Taxonomy
 The website aims to function as an online repository for outreach projects, serving as a resource hub. Therefore, it’s essential to arrange these projects, and considerable work has gone into defining a taxonomy for classifying them. The final taxonomy finally stabilized with 25 categories grouped into 4 meta-categories:
 
-**Topic**
-The topic refers to the main subject that the project focuses on.
-It can be, for example: Physics, Art, Sociology...
+**Topic** refers to the main subject that the project focuses on.
+*It can be, for example: Physics, Art, Sociology...*
 
-**Type**
-The project type refers to the format that the project takes.
-It can be, for example: Book, Movie, Show...
+**Type** refers to the format that the project takes.
+*It can be, for example: Book, Movie, Show...*
 
-**Audience**
-The audience refers to the intended public, the specific group to which the project is adapted.
-It can be, for example: Adults, Children, Scientists...
+**Audience** refers to the intended public, the specific group to which the project is adapted.
+*It can be, for example: Adults, Children, Scientists...*
 
-**Language**
-The language is a bit different from the other categories. It corresponds to the language in which
+**Language** is a bit different from the other categories. It corresponds to the language in which
 projects were developed and aims to group together same-language projects in an effort to form
 discussion groups to help build language-specific pages and/or to collect material.
 
