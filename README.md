@@ -88,8 +88,10 @@ Topics and Types Categories and tags work in the following way:
 | ![Topics category](media/Topics_category.svg) | ![Types category](media/Types_category.svg) |
 | - | - |
 
+Made by FraMindmap
+
 ## Data
-Some data about the projects currently on the website: 
+At the moment, 121 projects have been posted on the website. Statistics regarding the affiliated IPPOG (associated) members, topics, and types are available:
 
 Simply run 
 ```
