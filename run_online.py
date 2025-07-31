@@ -35,21 +35,23 @@ def json_to_md(output_dir):
         print(f"PROJECT-{begin}\" will be formated")
 
     for row in data: 
+        row = list(row.values())
+
         if not row:
             continue  # Skip empty rows
 
-        if begin !="" and int(row["ID"]) != int(begin):
+        if begin !="" and int(row[0]) != int(begin):
             continue # Skip project untill selected ID
-        elif begin =="" and row["State"]!="OK":
+        elif begin =="" and row[23]!="OK":
             continue #Skip not "OK" status
 
-        if row["ID"]!="":
-            ID = str(row["ID"])
+        if row[0]!="":
+            ID = str(row[0])
         else :
             print("\n#############################################\n# ERROR please define an ID in the database #\n#############################################")
-            print(f"\n/!\\ no ID for project \"{row["Name of the project in English"]}\" /!\\")
+            print(f"\n/!\\ no ID for project \"{row[1]}\" /!\\")
             break
-        print(f"\n\"{row["Name of the project in English"]}\" is now defined as - PROJECT-" + ID + " -")
+        print(f"\n\"{row[1]}\" is now defined as - PROJECT-" + ID + " -")
 
         filename = "PROJECT-" + ID  + ".md"  # Create filename from first cell
         filepath = os.path.join(output_dir, filename)
@@ -61,19 +63,19 @@ def json_to_md(output_dir):
             ###########
 
             mdfile.write(f"---\n\n")
-            mdfile.write(f"[draft] title: {row["Name of the project in English"]}")
+            mdfile.write(f"[draft] title: {row[1]}")
             mdfile.write(f"\n[draft] ID: {ID}")
             mdfile.write(f"\n[draft] run `/media & text` with the \"show media on the right\"")
             mdfile.write(f"\n[draft] run `/title` in left column")
             mdfile.write(f"\n[draft] choose \"featured image\" in right column")
 
-            if row["Name of the project in it's original language"]!="":
-                mdfile.write(f"\n[draft] subtitle: {row["Name of the project in it's original language"]}") # Name of the project in it's original language (optional)
+            if row[2]!="":
+                mdfile.write(f"\n[draft] subtitle: {row[2]}") # Name of the project in it's original language (optional)
             
-            if row["Featured Image"]!="":
-                mdfile.write(f"\n[draft] link to image: {row["Featured Image"]}")
+            if row[3]!="":
+                mdfile.write(f"\n[draft] link to image: {row[3]}")
                 mdfile.write(f"\n[draft] Align the credits to the righ, bellow the image")
-                mdfile.write(f"\n\nCredit: {row["Credit of the featured image"]}") # Credit for the image
+                mdfile.write(f"\n\nCredit: {row[4]}") # Credit for the image
             else : 
                 print("/!\\ no registered Featured image /!\\")
             mdfile.write(f"\n\n---\n")
@@ -82,9 +84,9 @@ def json_to_md(output_dir):
             ## Abstract ##
             ##############
 
-            mdfile.write(f"\n## Abstract\n{row["Abstract"]}") # Write the abstract
-            if row["Presentation Documents"]!="":
-                mdfile.write(f"\n\n- [{row["Name of the conference"]} ({row["Year of the conference"]})]({row["Presentation Documents"]})") # Write the url of the presentation slides as a hyperlink with [Conference (date)] as text
+            mdfile.write(f"\n## Abstract\n{row[5]}") # Write the abstract
+            if row[13]!="":
+                mdfile.write(f"\n\n- [{row[11]} ({row[12]})]({row[13]})") # Write the url of the presentation slides as a hyperlink with [Conference (date)] as text
             mdfile.write(f"\n\n---\n")
 
             #############
@@ -94,20 +96,20 @@ def json_to_md(output_dir):
             mdfile.write(f"\n## Contact")
             mdfile.write(f"\n\n")
 
-            mdfile.write(f"<b>Authors:</b>\n{row["Author names,affiliation"]}".replace('\n','\n- ')) # Write Authors name and afficiations as a list
+            mdfile.write(f"<b>Authors:</b>\n{row[6]}".replace('\n','\n- ')) # Write Authors name and afficiations as a list
             mdfile.write(f"\n\n")
 
             # Supporting entities remove for now
             #mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace('\n','\n- ')) # Write supporting entities as a list
             #mdfile.write(f"\n\n")
 
-            if row["Related IPPOG member"] != "":
+            if row[19] != "":
                 mdfile.write(f"<b>Related IPPOG Collaboration members:</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
-                contact = next(iter({row["Related IPPOG member"]})).split(', ')
+                contact = next(iter({row[19]})).split(', ')
                 for i in range (len(contact)):
                     mdfile.write(f"- [{contact[i]}]({members_dico[contact[i]]})\n") # Call the URL from the dictionary
 
-            mdfile.write(f"\n<b>Contact:</b>\n- {row["Public contact"]}".replace('@',' [at] ')) # Protect email by replacing @ with [at]
+            mdfile.write(f"\n<b>Contact:</b>\n- {row[8]}".replace('@',' [at] ')) # Protect email by replacing @ with [at]
 
             mdfile.write(f"\n\n---\n")
 
@@ -115,7 +117,7 @@ def json_to_md(output_dir):
             ## Status ##
             ############
 
-            mdfile.write(f"\n## Project status\n{row["Project Status"]} (updated {datetime.today().strftime('%Y-%m-%d')})") # Write the project status at today's date
+            mdfile.write(f"\n## Project status\n{row[10]} (updated {datetime.today().strftime('%Y-%m-%d')})") # Write the project status at today's date
 
             mdfile.write(f"\n\n---\n")
 
@@ -123,7 +125,7 @@ def json_to_md(output_dir):
             ## Ressoucres ##
             ################
 
-            ressource = next(iter({row["Other resources"]})).split('\n') # Separate ressources and write them as a list of hyperlink
+            ressource = next(iter({row[14]})).split('\n') # Separate ressources and write them as a list of hyperlink
             if(ressource!=['']):
                 mdfile.write(f"\n## Files & Resources")
 
@@ -149,8 +151,8 @@ def json_to_md(output_dir):
 
             ### Should not appear on the website, the PROJECT-ID should be used for the URL slug, Categories and Tags sould be added to the corresponding menu
             mdfile.write(f"\n\n[draft] Add the categories and tags bellow")
-            mdfile.write(f"\n[draft] Categories: {row["Audiences"]} / {row["Langage"]} / {row["Topics"]} / {row["Type"]}")
-            mdfile.write(f"\n[draft] Tags: {row["Sub Types"]} / {row["Sub Topics"]}")
+            mdfile.write(f"\n[draft] Categories: {row[17]} / {row[18]} / {row[16]} / {row[15]}")
+            mdfile.write(f"\n[draft] Tags: {row[20]} / {row[21]}")
 
         print(f"Created: {filepath}")
 

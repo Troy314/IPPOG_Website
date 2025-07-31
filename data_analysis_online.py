@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from datetime import datetime
 import numpy as np
 
 from dictionaries.data_representatives_dictonary import representatives_dico
@@ -39,29 +40,31 @@ data = sheet.get_all_records()
 #########################################################
 
 for row in data: 
+    row = list(row.values())
+
     if not row:
           continue  # Skip empty rows
     
-    if row["State"]!="Online":
+    if row[23]!="Online":
           continue #Skip not "Online" status
     
-    for topic_i in row["Topics"].split(', '):
+    for topic_i in row[16].split(', '):
            if topic_i != "":
                 topics_dico[topic_i] += 1
     
-    for type_i in row["Type"].split(', '):
+    for type_i in row[15].split(', '):
            if type_i != "":
                 types_dico[type_i] += 1
     
-    for subtype_i in row["Sub Types"].split(', '):
+    for subtype_i in row[20].split(', '):
            if subtype_i != "":
                 subtypes_dico[subtype_i] += 1
     
-    for subtopic_i in row["Sub Topics"].split(', '):
+    for subtopic_i in row[21].split(', '):
            if subtopic_i != "":
                 subtopics_dico[subtopic_i] += 1
     
-    for representative_i in row["Related IPPOG member"].split(', '):
+    for representative_i in row[19].split(', '):
            if representative_i != "":
                 representatives_dico[representative_i] += 1
 
@@ -130,8 +133,9 @@ ax.pie(representatives_value, radius=1, labeldistance=1.1, rotatelabels=True, ex
 ax.legend(title = "Related members:",loc = 'upper right',bbox_to_anchor=(1.7, 0, 0.5, 1))
 
 ax.text(1, -3.5, representatives_no_data, bbox=dict(facecolor='white', alpha=0.3))
+ax.text(2.5, -3.5, f"updated {datetime.today().strftime('%Y-%m-%d')}", bbox=dict(facecolor='white', alpha=0.3))
 plt.savefig("media/data/Related_members.svg",bbox_inches='tight')
-print("\nSaving \"Related_members.svg\" plot in media/data/ directory")
+print("\nSaving SVG file: \"Related_members.svg\" plot in directory: media/data/ ")
 #plt.show()
 
 #######################
@@ -203,9 +207,10 @@ subexplode = np.ones(len(subtypes_value))*.01
 ax.pie(subtypes_value, radius=.9+size, colors=subtypes_color, labeldistance=1, explode=subexplode, labels=subtypes_label, rotatelabels=True, wedgeprops=dict(width=size, edgecolor='w'))
 
 ax.text(2, 1.5, subtypes_no_data, bbox=dict(facecolor='white', alpha=0.3))
+ax.text(2.2, 1.3, f"updated {datetime.today().strftime('%Y-%m-%d')}", bbox=dict(facecolor='white', alpha=0.3))
 ax.set(aspect="equal")
 plt.savefig("media/data/types.svg",bbox_inches='tight')
-print("Saving \"types.svg\" plot in media/data/ directory")
+print("Saving SVG file: \"types.svg\" plot in directory: media/data/ ")
 #plt.show()
 
 ########################
@@ -271,7 +276,8 @@ subexplode = np.ones(len(subtopics_value))*.01
 ax.pie(subtopics_value, radius=.9+size, colors=subtopics_color, labeldistance=1, explode=subexplode, labels=subtopics_label, rotatelabels=True, wedgeprops=dict(width=size, edgecolor='w'))
 
 ax.text(2, -.2, subtopics_no_data, bbox=dict(facecolor='white', alpha=0.3))
+ax.text(3, -.4, f"updated {datetime.today().strftime('%Y-%m-%d')}", bbox=dict(facecolor='white', alpha=0.3))
 ax.set(aspect="equal")
 plt.savefig("media/data/topics.svg",bbox_inches='tight')
-print("Saving \"topics.svg\" plot in media/data/ directory")
+print("Saving SVG file: \"topics.svg\" plot in directory: media/data/ ")
 #plt.show()

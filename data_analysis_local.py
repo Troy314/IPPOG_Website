@@ -128,6 +128,7 @@ ax.pie(representatives_value, radius=1, labeldistance=1.1, rotatelabels=True, ex
 ax.legend(title = "Related members:",loc = 'upper right',bbox_to_anchor=(1.7, 0, 0.5, 1))
 
 ax.text(1, -3.5, representatives_no_data, bbox=dict(facecolor='white', alpha=0.3))
+ax.text(2.5, -3.5, f"updated {datetime.today().strftime('%Y-%m-%d')}", bbox=dict(facecolor='white', alpha=0.3))
 plt.savefig("media/data/Related_members.svg",bbox_inches='tight')
 print("Saving SVG file: \"Related_members.svg\" plot in directory: media/data/ ")
 #plt.show()
@@ -201,6 +202,7 @@ subexplode = np.ones(len(subtypes_value))*.01
 ax.pie(subtypes_value, radius=.9+size, colors=subtypes_color, labeldistance=1, explode=subexplode, labels=subtypes_label, rotatelabels=True, wedgeprops=dict(width=size, edgecolor='w'))
 
 ax.text(2, 1.5, subtypes_no_data, bbox=dict(facecolor='white', alpha=0.3))
+ax.text(2.2, 1.3, f"updated {datetime.today().strftime('%Y-%m-%d')}", bbox=dict(facecolor='white', alpha=0.3))
 ax.set(aspect="equal")
 plt.savefig("media/data/types.svg",bbox_inches='tight')
 print("Saving SVG file: \"types.svg\" plot in directory: media/data/ ")
@@ -269,6 +271,7 @@ subexplode = np.ones(len(subtopics_value))*.01
 ax.pie(subtopics_value, radius=.9+size, colors=subtopics_color, labeldistance=1, explode=subexplode, labels=subtopics_label, rotatelabels=True, wedgeprops=dict(width=size, edgecolor='w'))
 
 ax.text(2, -.2, subtopics_no_data, bbox=dict(facecolor='white', alpha=0.3))
+ax.text(3, -.4, f"updated {datetime.today().strftime('%Y-%m-%d')}", bbox=dict(facecolor='white', alpha=0.3))
 ax.set(aspect="equal")
 plt.savefig("media/data/topics.svg",bbox_inches='tight')
 print("Saving SVG file: \"topics.svg\" plot in directory: media/data/ ")
