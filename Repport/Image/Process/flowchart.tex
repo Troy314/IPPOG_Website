@@ -1,0 +1,102 @@
+%\documentclass{standalone}
+%\usepackage{tikz}
+%\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+%\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+%\usetikzlibrary{decorations.markings}
+
+%\begin{document}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, 
+minimum width=3cm, 
+minimum height=1cm,
+text centered, 
+draw=black, 
+fill=red!30]
+
+\tikzstyle{io} = [trapezium, 
+trapezium stretches=true, % A later addition
+trapezium left angle=70, 
+trapezium right angle=110, 
+text width=3cm, 
+minimum width=3cm, 
+minimum height=1cm, text centered, 
+draw=black, fill=blue!30]
+
+\tikzstyle{process} = [rectangle, 
+minimum width=3cm, 
+minimum height=1cm, 
+text centered, 
+text width=3cm, 
+draw=black, 
+fill=orange!30]
+
+\tikzstyle{decision} = [diamond, 
+minimum width=.5cm, 
+aspect=2,
+minimum height=.5cm,  
+text width=2cm, 
+text centered, 
+draw=black, 
+fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[node distance=2cm]
+        \vspace{1cm}
+        
+        \node (inform) [io] {Input (User/IPPOG)};
+        \node (form) [startstop, below of=inform, yshift=-.5cm] {Google form};
+        
+        \node (online) [process, below of=form, yshift=-.5cm] {Google sheet database};
+        \node (inonline) [io, below of=online, yshift=-.5cm] {Correction (IPPOG)};
+        
+        \node (decision) [decision, right of=online, xshift=2.5cm] {Choice};
+        
+        \node (inlocal) [io, above of=decision, yshift=.5cm] {Download CSV File (IPPOG)};
+        \node (local) [process, right of=inlocal, xshift=2.5cm] {Local CSV file database};
+        
+        \node (inpylocal) [io, right of=local, xshift=2.5cm] {run\_local.py (IPPOG)};
+        \node (pylocal) [process, right of=inpylocal, xshift=2.5cm] {Python local code};
+        \node (inpyonline) [io, below of=inpylocal, yshift=-.5cm] {run\_online.py (IPPOG)};
+        \node (pyonline) [process, right of=inpyonline, xshift=2.5cm] {Python online code};
+        
+        \node (md) [process, below of=pyonline, xshift=2.5cm, yshift=-.5cm] {Markdown files};
+        
+        \node (inmd) [io, below of=md, yshift=-.5cm, xshift=-2.5cm] {Copy/Past (IPPOG)};
+        
+        \node (web) [startstop, left of=inmd, xshift=-3cm] {Upload to Website};
+
+        \begin{scope}[very thick,decoration={
+            markings,
+            mark=at position 0.7 with {\arrow{latex}}}
+            ] 
+            \draw [postaction={decorate}] (0,2) -- (inform);
+            \draw [postaction={decorate}] (form) -- node [left] {Auto} (online);
+            \draw [postaction={decorate}] (inform) -- (form);
+            \draw [postaction={decorate}] (inonline) -- node [right] {Add tags and change status to "OK"}  (online);
+            \draw [postaction={decorate}] (online) -- (decision);
+            \draw [postaction={decorate}] (decision) -- node [above] {"online" mode} (inpyonline);
+            \draw [postaction={decorate}] (decision) -- node [right] {"local" mode} (inlocal);
+            \draw [postaction={decorate}] (inlocal) -- (local);
+            \draw [postaction={decorate}] (local) -- (inpylocal);
+            \draw [postaction={decorate}] (inpylocal) -- (pylocal);
+            \draw [postaction={decorate}] (inpyonline) -- (pyonline);
+            \draw [postaction={decorate}] (pylocal) -| +(2.5,-2.5);
+            %\draw [postaction={decorate}] (pyonline) -+ (21.5,0);
+            \draw [postaction={decorate}] (pyonline) -| (md);
+            \draw [postaction={decorate}] (pyonline) -- +(2.5,0);
+            %\draw [postaction={decorate}] (pylocal) -| (md);
+            \draw [postaction={decorate}] (md) |- (inmd);
+            \draw [postaction={decorate}] (inmd) -- (web);
+            \draw [dotted,postaction={decorate}] (md) -- node [below] {Possible to do correction but need to be recompiled} (inonline);
+            \draw [dotted,postaction={decorate}] (web) -- node [below] {Change status to "Online"} (-2.5,-10);
+            \draw [dotted,postaction={decorate}] (-2.5,-10) |- (online);
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Flowchart of the upload process}
+    \label{fig:flowchart}
+\end{figure}
+
+
+%\end{document}

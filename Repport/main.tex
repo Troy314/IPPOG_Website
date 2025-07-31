@@ -1,0 +1,187 @@
+\documentclass[a4paper,11pt]{book}
+
+% ----- Encoding and language -----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+
+% ----- General layout -----
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2.5cm,bottom=3cm}
+\setlength{\parindent}{0cm}
+\renewcommand{\baselinestretch}{1.0}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{abstract}
+\usepackage{tocbibind}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{pdfpages}
+\usepackage{svg}
+
+% ----- Fonts and titles -----
+\usepackage{sectsty}
+\usepackage{titlesec}
+\sectionfont{\fontsize{14}{15}\selectfont}
+\subsectionfont{\fontsize{13}{15}\selectfont}
+\titleformat{\section}[block]{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[block]{\bfseries\hspace{2em}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]{\small\bfseries\hspace{4em}}{\thesubsubsection}{1em}{}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+% ----- Tables -----
+\usepackage{tabularx}
+\usepackage{xltabular}
+\usepackage{longtable}
+\usepackage{multirow, makecell}
+\usepackage{nicematrix}
+\usepackage{tabularray}
+\usepackage{vcell}
+\usepackage[table,xcdraw]{xcolor}
+
+% ----- Cross-referencing -----
+\usepackage{hyperref}
+\usepackage{cleveref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\newcommand{\secref}[1]{(Section \ref{#1})}
+\newcommand{\ssecref}[1]{(\ref{#1})}
+\newcommand{\chapref}[1]{(Chapitre \ref{#1})}
+\newcommand{\figref}[1]{(Figure \ref{#1})}
+\newcommand{\tabref}[1]{(Table \ref{#1})}
+
+% ----- Listes -----
+\usepackage{enumitem}
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=$\circ$}
+\newenvironment{myitemize}
+{ \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} }
+{ \end{itemize} }
+
+% ----- Code -----
+\usepackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showstringspaces=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% ----- Figures -----
+\usepackage{caption}
+\usepackage{subcaption}
+\counterwithin{figure}{section}
+
+% ----- Colors -----
+\usepackage[dvipsnames]{xcolor}
+\usepackage{soul}
+\definecolor{green_new}{RGB}{194, 234, 229}
+\definecolor{yellow_new}{RGB}{252,229,205}
+\definecolor{red_new}{RGB}{244,204,204}
+\definecolor{mygray}{rgb}{0.8,0.8,0.8}
+\newcommand{\green}[1]{\colorbox{green_new}{#1}}
+\newcommand{\yellow}[1]{\colorbox{yellow_new}{#1}}
+\newcommand{\red}[1]{\colorbox{red_new}{#1}}
+\newcommand{\gray}[1]{\colorbox{mygray}{#1}}
+
+% ----- TikZ -----
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees,decorations.markings}
+\usepackage{pgf-pie}
+\newcommand{\slice}[4]{
+  \pgfmathparse{0.5*#1+0.5*#2}
+  \let\midangle\pgfmathresult
+  \draw[thick,fill=black!10] (0,0) -- (#1:1) arc (#1:#2:1) -- cycle;
+  \node[label=\midangle:#4] at (\midangle:1) {};
+  \pgfmathparse{min((#2-#1-10)/110*(-0.3),0)}
+  \let\temp\pgfmathresult
+  \pgfmathparse{max(\temp,-0.5) + 0.8}
+  \let\innerpos\pgfmathresult
+  \node at (\midangle:\innerpos) {#3};
+}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+% ----- Divers -----
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{\includesvg{Image/IPPOG_Graphic_Charter_first.svg}}
+\clearpage
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace{1cm}
+    \begin{figure}[h!]
+        \centering
+        \includesvg[width=.5\textwidth]{Image/IPPOG_logo.svg}
+    \end{figure}
+    \Huge\textbf{IPPOG Resources Portal\\GUIDELINES}
+    \vspace{1cm}\\
+    {Version 3 (31/07/25)}\par
+    \vspace{2cm}
+    {\Large\textbf{Hector PILLOT\footnote{Realized as part of the admin student contract of Hecotr Pillot (01/03/25 - 31/07/25)}}}\par
+    \begin{center}
+        \rule{0.5\linewidth}{1pt}
+    \end{center}
+    \normalsize
+    For any question, please contact\\Claire.Adam.Bourdarios@cern.ch\\
+    \vspace{2cm}
+    \vfill 
+    \centering
+    \vspace{1cm}
+\end{titlepage}
+
+\AddToShipoutPictureBG{\includesvg{Image/IPPOG_Graphic_Charter.svg}}
+\clearpage
+
+\tableofcontents
+
+\newpage
+
+\input{Corps/0. Intro}
+\input{Corps/1. Context}
+\input{Corps/2. Website_Architecture}
+\input{Corps/3. Process}
+\input{Corps/4. Data_vizualisation}
+\input{Corps/5. Useful_links}
+
+\end{document}

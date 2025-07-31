@@ -1,0 +1,139 @@
+\part{General Description}\label{part:general}
+
+\chapter{Context}\label{chap:context}
+
+As of 2025, CERN made the decision to migrate its website from Drupal to WordPress\footnote{\href{https://wordpress.docs.cern.ch/}{https://wordpress.docs.cern.ch/}}. A key point about this software is the different types of content that can be created. It comes in two types: pages and posts (Section \ref{ssec:typecontent}). During the website development phase, significant attention was given to the structure of posts, ensuring easy access through a clear taxonomy (Section \ref{ssec:categorization}) and enhancing readability by pinpointing important content to emphasize (Section \ref{ssec:content}).
+
+\section{WordPress types of content}\label{ssec:typecontent}
+
+WordPress enables the creation of two types of content: Pages and Posts\footnote{\href{https://wordpress.com/support/post-vs-page/}{https://wordpress.com/support/post-vs-page/}}. Both display content on a website but are used for different purposes. 
+
+\subsection*{Pages}
+Pages are permanent fixtures of the site for people to access at any time. On this website, pages are typically used for the Homepage or the description of the taxonomy.
+
+\subsection*{Posts}
+Posts are individual pieces of content. They are associated with properties like date, categories, tags, keywords, or even a picture and an excerpt. On this website, posts are used for presenting outreach projects. Thanks to the post properties, each project can be efficiently categorized according to the taxonomy and sorted depending on the need.
+
+\newpage
+\section{Taxonomy of the projects}\label{ssec:categorization}
+
+The website aims to function as an online repository for outreach projects, serving as a resource hub. Therefore, it's essential to arrange these projects, and considerable work has gone into defining a taxonomy for classifying the projects. The RDB tags list\footnote{\href{https://ippog.org/ippog-resource-database}{https://ippog.org/ippog-resource-database}} was used as a reference, but instead of focusing on resources like the previous website, this portal focuses on projects. And, as the objective of the portal changed, the taxonomy had to change as well. To define the current taxonomy, a first draft was proposed, based on various resource portals like CERN's\footnote{\href{https://home.cern/resources}{https://home.cern/resources}} or the Perimeter Institute\footnote{\href{https://resources.perimeterinstitute.ca/}{https://resources.perimeterinstitute.ca/}}. 
+
+In the meantime, approximately 120 outreach projects were identified from presentations made during "success stories" sessions of IPPOG meetings. In these sessions, conveners share their own outreach projects in particle physics and discuss the challenges and opportunities they faced. The taxonomy was evaluated against these projects to find out if it was adjusted appropriately and to check for any categories that were either vacant or excessively filled. The classification system was further refined, with new projects being added afterward. The final taxonomy finally stabilized with 25 categories (Table \ref{tab:categories}) grouped into 4 meta-categories: 
+
+\subsection*{Topic}
+The topic refers to the main subject that the project focuses on.\newline
+\textit{It can be, for example: Physics, Art, Sociology...}
+
+\subsection*{Type}
+The project type refers to the format that the project takes.\newline
+\textit{It can be, for example: Book, Movie, Show...}
+
+\subsection*{Audience}
+The audience refers to the intended public, the specific group to which the project is adapted.\newline
+\textit{It can be, for example: Adults, Children, Scientists...}
+
+\subsection*{Language}
+The language is a bit different from the other categories. It corresponds to the language in which projects were developed and aims to group together same-language projects in an effort to form discussion groups to help build language-specific pages and/or to collect material.
+
+\begin{table}[h!]
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Topic (5)} & \textbf{Type (8)} & \textbf{Audience (6)} & \textbf{Language (6)} \\ \hline
+        Universe & Labs \& Visit Centers & Primary School (4-12 yo) & English \\ 
+        Matter \& Forces & Online Resources & Educators \& Outreach Community & French \\ 
+        Technology & Festivals \& Temporary Events & Secondary School (12-19 yo) & German \\ 
+        Science \& Society & Open Science Projects & Broad Public & Italian \\ 
+        Art Science & National Outreach Programs & University Level (19+ yo) & Portuguese \\ 
+        & Books \& Publications & Scientific Community & Spanish \\ 
+        & Hands on Activities &  &  \\ 
+        & Games &  &  \\ \hline
+    \end{tabular}
+    \caption{Categories}
+    \label{tab:categories}
+\end{table}
+
+\newpage
+These categories allow for straightforward navigation across the resource website. However, they lack the specificity needed to locate a particular project. To address this problem, tags were developed using the same method as categories. They act as a subcategory, with each category being subdivided into several tags to enable a fine-tuned search (Fig. \ref{fig:Topics_category} \& \ref{fig:Types_category}). 
+
+Note, however, that if every project has categories, they don't all have tags. The decision was taken to specifically mention tags only for projects that focus on a specific field. For example, a very general project about "Matter \& Force", referring to "Higgs", "Neutrinos", "Antimater" and "Nuclear physics" will only have the "Matter \& Force" category and no tags, but a project about "Matter \& Force" specifically about "Higgs" will have both the "Matter \& Force" category and "Higgs" tag.
+
+The current state of the website, including the number of projects from each category and tag, is available in Section \ref{ssec:state}.
+
+\section{Content choice}\label{ssec:content}
+
+The aim of the resource portal is to provide access to the projects for all interested parties, regardless of whether they come from a scientific background or not. As such, posts had to be explicit while not being too dense. To achieve this, key information was identified as being:
+\begin{itemize}
+    \item The name of the projects and a general description
+    \item Information about its authors and a way to contact them
+    \item Status of the project
+    \item Additional information
+\end{itemize}
+
+They were further developed as the following:
+
+\subsection*{Introduction}
+This section provides a summary of the project, including its name in English (and in its original language, if available) along with an image that represents it. A brief abstract is included that outlines the project's main idea without going into details. For additional information about the project, a link to the presentation given at the conference is included.
+
+\subsection*{Information about its authors}
+This section lists all authors involved in the project as well as their affiliations. There are also the affiliated IPPOG members\footnote{\href{https://ippog.org/members}{https://ippog.org/members}} or associated members\footnote{\href{https://ippog.org/associated-members}{https://ippog.org/associated-members}} and a contact, either an email or an URL leading to a contact form.
+
+\subsection*{Status of the project}
+This section gives the status of the project. It can either be "Unknown", "In preparation", "Ongoing", "Available" or "Done". As the status is subject to change, the date of the most recent update of the post is included.
+
+\subsection*{Additional information}
+This section compiles supplementary documents and links pertinent to the project. This generally include websites, presentations from other conferences, or academic papers.
+
+\newpage
+\section{Current state of the Website}\label{ssec:state}
+
+At the moment this document is written, 121 projects have been posted on the website. Statistics regarding the affiliated IPPOG (associated) members, topics and types were produced.
+
+\subsection*{Affiliated IPPOG (associated) members}
+The representation of IPPOG members is noticeably unbalanced (Fig. \ref{fig:members}), with Germany and Italy being the most represented countries, followed by France and the United States of America, which conduct extensive outreach activities through Netzwerk Teilchenwelt, INFN, IN2P3, and QuarkNet. Major collaborations such as ATLAS and ALICE, along with CERN, also make significant contributions due to their larger scale. But most members have close to no outreach projects listed on the website. Developing language discussion groups could help reduce this gap.
+
+A difficulty here is that the choice was made that only content presented in a conference or meeting would be uploaded on the website. This choice enables the use of a short abstract, complemented by the slides from the outreach session in which it was presented. This also guarantees the quality of the projects, as it was presented during big meetings. The problem, however, is that such outreach sessions are limited during conferences. Additionally, not all conferences offer their own outreach sessions, and some have only recently introduced them. This greatly reduces the available projects from some parts of the world.
+
+\subsection*{Topics}
+Among the covered topics, "Matter \& Force" is the most represented, with its subtopic "Standard model of elementary particles" (Fig. \ref{fig:topics}) which is no wonder, as it is the main focus of the outreach group. Three subtopics were left even though empty: "Machine learning", "Civil Engineering \& Construction" and "Cryogeny, Magnet \& Supraconductors", as they remain pertinent topics, but they could be removed if no related outreach projects are added.  
+
+\subsection*{Types}
+There are many different types of outreach projects, and this meta-category aims to demonstrate their full diversity (Fig. \ref{fig:types}). In this scenario, the "Festival" is the subtopic that appears most frequently. This is because outreach activities like demonstrations, visits, or even games tend to be used during temporary events like science fairs. As such, it is not the activity or visit that is presented during outreach sessions, but the festival in which it was used. 
+
+Another issue is that speakers often give an overview of what their laboratory, experiment, or country did, rather than focusing on individual projects. This results in the presentation turning into a broad overview, lacking sufficient details to upload several projects onto the website. The solution found was to introduce the subtopics "Experiment" and "Laboratory" projects, as well as the topic "National outreach program" which has no subtopics.
+
+\begin{figure}[p]
+    \centering
+    \includesvg[width=.7\linewidth,inkscapelatex=false]{Image/Context/Topics_category.svg}
+    \caption{Categorization of Topics}
+    \label{fig:Topics_category}
+\end{figure}
+
+
+\begin{figure}[p]
+    \centering
+    \includesvg[width=.6\linewidth,inkscapelatex=false]{Image/Context/Types_category.svg}
+    \caption{Categorization of Types}
+    \label{fig:Types_category}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includesvg[width=\linewidth]{Image/Context/Related_members.svg}
+    \caption{Related members data}
+    \label{fig:members}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includesvg[width=\linewidth]{Image/Context/topics.svg}
+    \caption{Topics data}
+    \label{fig:topics}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includesvg[width=\linewidth]{Image/Context/types.svg}
+    \caption{Types data}
+    \label{fig:types}
+\end{figure}

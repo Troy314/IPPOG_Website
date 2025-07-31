@@ -6,56 +6,91 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://ippog-resources-portal.web.cern.ch/">
+    <img src="media/banner_IPPOG.png" alt="IPPOG banner">
+  </a>
+</p>
+
+## The project
+The “Resource portal” was created in 2025, at the request of the HEP community during the ICHEP
+2024 conference2. It aims both to give an idea of outreach projects for the scientific community and
+to give a fair impression of the engagement and effort of the HEP outreach community.
+
+The strategy for this resource portal is to serve as an online project database in which each outreach project is described in a post. We decided to start by uploading the projects presented by their owners and developers during IPPOG meetings’ "success stories" sections. The idea here is to direct to a presentation by the authors themselves, possibly supplemented by a few resources. 
+
+A repport is available in ![Guidelines](Repport/IPPOG_Guidelines.pdf)
+
 ## Database formatting
 
-The goal of this code is to facilitate the work of the IPPOG core team in uploading projects to the Wordpress [IPPOG Resource Portal](https://ippog-resources-portal.web.cern.ch/).
+The goal of this workflow is to facilitate the work of the IPPOG core team in uploading projects to the Wordpress [IPPOG Resource Portal](https://ippog-resources-portal.web.cern.ch/).
 
-The aim is to let the community submit their projects through a simple and explicit [google form](https://forms.gle/tp2t45JroU8sFffH9).
+The aim is to let the community submit their projects through a simple and explicit [Google Form](https://forms.gle/tp2t45JroU8sFffH9) linked to a Google Sheet document. It allows to guide the user through the form, and to automatically fill the database on Google Sheet.
 
-The [Google Sheet extracted from it](https://docs.google.com/spreadsheets/d/1x_SdxdlHwG8chH77WqrTAAgijY2XBY3nPIi2p3TKqzs/edit?usp=sharing) is already formatted to be added to the Resource Database (*minus the first column that needs to be replaced by the ID of the project*).
+The [Google Sheet](https://docs.google.com/spreadsheets/d/1x_SdxdlHwG8chH77WqrTAAgijY2XBY3nPIi2p3TKqzs/edit?usp=sharing) is formated so to be easily read by a python code.
 
-The user can either export the database as a csv file (see `exemple_file.csv`) and run `run_local.py` or enable the Google API to directly work with the online database and run `run_online.py`. The code produces, for each line of the database, one markdown file in a directory named `output_markdown`. These files are already mostly formatted to be copy/pasted into the WordPress website.
+The user can either export the database as a CSV file (see `exemple_file.csv`) and run the code via `run_local.py` or enable the Google API to directly work with the online database and run the code via `run_online.py`. The code produces, for each line of the database, one markdown file in a directory named `output_markdown/`. These files are already formatted to be copy/pasted into the WordPress website.
 
 The flowchart detailing the upload process is as follows :
 
 ![Flowchart](media/Flowchart.svg)
 
 ## Dependencies
-*WIP*
+Libraries needed to run the code are: 
+
+```
+python3 -m pip install python-csv DateTime pathlib2
+```
+
+Optional parts of the code makes use of Google Sheets API and needs:
+```
+python3 -m pip install gspread google-auth google-auth-oauthlib google-auth-httplib2
+```
 
 ## Running
-*WIP*
+
+Simply run 
+```
+python3 run_online.py
+```
+
+Or alternatively for the local version
+
+```
+python3 run_local.py
+```
+And input the name of the database CSV file
+
 
 ## Upload process
 The upload process is detailed in the video bellow : 
 [![Uploading](https://img.youtube.com/vi/OQ6QYBG_MYU/0.jpg)](https://www.youtube.com/watch?v=OQ6QYBG_MYU)
 
-## What needs to be done manually on the WordPress website
-What needs to be done manually appears in the markdown file as `[draft]`
-- Create a "media & text" block with the title and the featured image
-- Upload the "Featured image"
-- Update the "excerpt"
-- Add the categories and tag to the post properties
-- Add the "categories" and "tag" blocks
-- Remove the unnecessary parts
-
+## Taxonomy
 Categories and tags work in the following way:
 
 | ![Topics category](media/Topics_category.svg) | ![Types category](media/Types_category.svg) |
 | - | - |
 
-## Work in progress
-- Documentation document
-- Git Repository
-
 ## Data
 Some data about the projects currently on the website: 
 
-For more details, see `data_analysis_local.py` and `data_analysis_online.py`
+Simply run 
+```
+python3 data_analysis_online.py
+```
 
+Or alternatively for the local version
+
+```
+python3 data_analysis_local.py
+```
+And input the name of the database CSV file
+
+The following plots are saved in media/data/
 ![Related members data](media/data/Related_members.svg)
 ![Topics data](media/data/topics.svg)
 ![Types data](media/data/types.svg)
 
 ## Contact
-If you see any problem, don't hesitate to contact me at hector.pillot [at] proton.me
+If you see any problems, don't hesitate to contact me at hector.pillot [at] proton.me
