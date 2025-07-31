@@ -33,7 +33,7 @@
      inkscape:cy="479.17034"
      inkscape:window-width="1296"
      inkscape:window-height="699"
-     inkscape:window-x="70"
+     inkscape:window-x="1750"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1042" />
@@ -2322,4 +2322,11 @@
      visibility="hidden"
      style="opacity:0"
      id="rect1915" />
+  <rect
+     style="fill:#ffffff;fill-rule:evenodd;stroke-width:13;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+     id="rect470"
+     width="447.16638"
+     height="836.94153"
+     x="-945.50024"
+     y="-434.83884" />
 </svg>
