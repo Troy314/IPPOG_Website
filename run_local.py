@@ -47,19 +47,19 @@ def csv_to_md(csv_filename, output_dir):
                 ###########
 
                 mdfile.write(f"---\n\n")
-                mdfile.write(f"[draft] title : {row[1]}")
-                mdfile.write(f"\n[draft] ID : {row[0]}")
+                mdfile.write(f"[draft] title: {row[1]}")
+                mdfile.write(f"\n[draft] ID: {row[0]}")
                 mdfile.write(f"\n[draft] run `/media & text` with the \"show media on the right\"")
                 mdfile.write(f"\n[draft] run `/title` in left column") # Name of the project in English
                 mdfile.write(f"\n[draft] choose \"featured image\" in right column")
 
                 if row[2]!="":
-                    mdfile.write(f"\n[draft] subtitle : {row[2]}") # Name of the project in it's original language (optional)
+                    mdfile.write(f"\n[draft] subtitle: {row[2]}") # Name of the project in it's original language (optional)
                 
                 if row[3]!="":
-                    mdfile.write(f"\n[draft] link to image : {row[3]}")
+                    mdfile.write(f"\n[draft] link to image: {row[3]}")
                     mdfile.write(f"\n[draft] Align the credits to the righ, bellow the image")
-                    mdfile.write(f"\n\nCredit : {row[4]}") # Credit for the image
+                    mdfile.write(f"\n\nCredit: {row[4]}") # Credit for the image
                 else : 
                     print("/!\\ no registered Featured image /!\\")
                 mdfile.write(f"\n\n---\n")
@@ -80,20 +80,20 @@ def csv_to_md(csv_filename, output_dir):
                 mdfile.write(f"\n## Contact")
                 mdfile.write(f"\n\n")
 
-                mdfile.write(f"<b>Authors :</b>\n{row[6]}".replace(':',' : ').replace('\n','\n- ')) # Write Authors name and afficiations as a list
+                mdfile.write(f"<b>Authors:</b>\n{row[6]}".replace('\n','\n- ')) # Write Authors name and afficiations as a list
                 mdfile.write(f"\n\n")
 
                 # Supporting entities remove for now
-                #mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace(':',' : ').replace('\n','\n- ')) # Write supporting entities as a list
+                #mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace('\n','\n- ')) # Write supporting entities as a list
                 #mdfile.write(f"\n\n")
 
                 if row[19] != "":
-                    mdfile.write(f"<b>Related IPPOG Collaboration member :</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
+                    mdfile.write(f"<b>Related IPPOG Collaboration member:</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
                     contact = next(iter({row[19]})).split(', ')
                     for i in range (len(contact)):
                         mdfile.write(f"- [{contact[i]}]({members_dico[contact[i]]})\n") # Call the URL from the dictionary
 
-                mdfile.write(f"\n<b>Contact :</b>\n- {row[8]}".replace('@',' [at] ')) # Protect email by replacing @ with [at]
+                mdfile.write(f"\n<b>Contact:</b>\n- {row[8]}".replace('@',' [at] ')) # Protect email by replacing @ with [at]
 
                 mdfile.write(f"\n\n---\n")
 
@@ -119,7 +119,8 @@ def csv_to_md(csv_filename, output_dir):
                                 mdfile.write(f"\n- [{ressource[j].replace(' :',':').replace(': ',':').split(':http')[0]}](http{ressource[j].replace(' ','').split(':http')[1]})")
                             else:
                                 print("/!\\ ERROR WHILE WRITING RESOURCES /!\\\n")
-                                print("problem happened at line: ",ressource[j].replace(' :',':').replace(': ',':').split(':http'),"\n")
+                                print("ERROR may come from missing \"https\" or blank")
+                                print("problem happened at Resource column, line: ",ressource[j].replace(' :',':').replace(': ',':').split(':http'),"\n")
 
                     mdfile.write(f"\n\n---\n")
 
@@ -136,12 +137,12 @@ def csv_to_md(csv_filename, output_dir):
                 ### Should not appear on the website, the PROJECT-ID should be used for the URL slug, Categories and Tags sould be added to the corresponding menu
                 mdfile.write(f"\n\n[draft] Add the categories and tags bellow")
                 mdfile.write(f"\n[draft] PROJECT-{ID}")
-                mdfile.write(f"\n[draft] Categories : {row[17]} / {row[18]} / {row[16]} / {row[15]}")
-                mdfile.write(f"\n[draft] Tags : {row[20]} / {row[21]}")
+                mdfile.write(f"\n[draft] Categories: {row[17]} / {row[18]} / {row[16]} / {row[15]}")
+                mdfile.write(f"\n[draft] Tags: {row[20]} / {row[21]}")
 
             print(f"Created: {filepath}")
 
-        print(f'\nMarkdown files are avalable at : {pathlib.Path().resolve()}/output_markdown')
+        print(f'\nMarkdown files are avalable at: {pathlib.Path().resolve()}/output_markdown')
 
 print("\n#################################")
 print("# Welcome to the CSV to MD code #")
@@ -150,7 +151,7 @@ print("This code enable the user to tranform csv file from https://docs.google.c
 print("To a formated, almost ready to past on the https://ippog-resources-portal.web.cern.ch/ website, md file")
 print("In case of problem, don't hesitate to contact hector.pillot [at] proton.me\n")
 
-file = input("> Enter the csv file name without the extension .csv : ")
+file = input("> Enter the csv file name without the extension .csv: ")
 
-print(f'The input file is : {pathlib.Path().resolve()}/{file}.csv')
+print(f'The input file is: {pathlib.Path().resolve()}/{file}.csv')
 csv_to_md(file+".csv", "output_markdown")

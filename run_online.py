@@ -61,19 +61,19 @@ def json_to_md(output_dir):
             ###########
 
             mdfile.write(f"---\n\n")
-            mdfile.write(f"[draft] title : {row["Name of the project in English"]}")
-            mdfile.write(f"\n[draft] ID : {ID}")
+            mdfile.write(f"[draft] title: {row["Name of the project in English"]}")
+            mdfile.write(f"\n[draft] ID: {ID}")
             mdfile.write(f"\n[draft] run `/media & text` with the \"show media on the right\"")
             mdfile.write(f"\n[draft] run `/title` in left column")
             mdfile.write(f"\n[draft] choose \"featured image\" in right column")
 
             if row["Name of the project in it's original language"]!="":
-                mdfile.write(f"\n[draft] subtitle : {row["Name of the project in it's original language"]}") # Name of the project in it's original language (optional)
+                mdfile.write(f"\n[draft] subtitle: {row["Name of the project in it's original language"]}") # Name of the project in it's original language (optional)
             
             if row["Featured Image"]!="":
-                mdfile.write(f"\n[draft] link to image : {row["Featured Image"]}")
+                mdfile.write(f"\n[draft] link to image: {row["Featured Image"]}")
                 mdfile.write(f"\n[draft] Align the credits to the righ, bellow the image")
-                mdfile.write(f"\n\nCredit : {row["Credit of the featured image"]}") # Credit for the image
+                mdfile.write(f"\n\nCredit: {row["Credit of the featured image"]}") # Credit for the image
             else : 
                 print("/!\\ no registered Featured image /!\\")
             mdfile.write(f"\n\n---\n")
@@ -94,20 +94,20 @@ def json_to_md(output_dir):
             mdfile.write(f"\n## Contact")
             mdfile.write(f"\n\n")
 
-            mdfile.write(f"<b>Authors :</b>\n{row["Author names,affiliation"]}".replace(':',' : ').replace('\n','\n- ')) # Write Authors name and afficiations as a list
+            mdfile.write(f"<b>Authors:</b>\n{row["Author names,affiliation"]}".replace('\n','\n- ')) # Write Authors name and afficiations as a list
             mdfile.write(f"\n\n")
 
             # Supporting entities remove for now
-            #mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace(':',' : ').replace('\n','\n- ')) # Write supporting entities as a list
+            #mdfile.write(f"<b>Supported by :</b>\n{row[7]}".replace('\n','\n- ')) # Write supporting entities as a list
             #mdfile.write(f"\n\n")
 
             if row["Related IPPOG member"] != "":
-                mdfile.write(f"<b>Related IPPOG Collaboration member :</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
+                mdfile.write(f"<b>Related IPPOG Collaboration members:</b>\n") # Write IPPOG members as hyperlink to the related ippog.org page
                 contact = next(iter({row["Related IPPOG member"]})).split(', ')
                 for i in range (len(contact)):
                     mdfile.write(f"- [{contact[i]}]({members_dico[contact[i]]})\n") # Call the URL from the dictionary
 
-            mdfile.write(f"\n<b>Contact :</b>\n- {row["Public contact"]}".replace('@',' [at] ')) # Protect email by replacing @ with [at]
+            mdfile.write(f"\n<b>Contact:</b>\n- {row["Public contact"]}".replace('@',' [at] ')) # Protect email by replacing @ with [at]
 
             mdfile.write(f"\n\n---\n")
 
@@ -133,7 +133,8 @@ def json_to_md(output_dir):
                             mdfile.write(f"\n- [{ressource[j].replace(' :',':').replace(': ',':').split(':http')[0]}](http{ressource[j].replace(' ','').split(':http')[1]})")
                         else:
                             print("/!\\ ERROR WHILE WRITING RESOURCES /!\\")
-                            print("problem happened at line: ",ressource[j].replace(' :',':').replace(': ',':').split(':http'),"\n")
+                            print("ERROR may come from missing \"https\" or blank")
+                            print("problem happened at Resource column, line: ",ressource[j].replace(' :',':').replace(': ',':').split(':http'),"\n")
                 mdfile.write(f"\n\n---\n")
 
             ######################
@@ -148,12 +149,12 @@ def json_to_md(output_dir):
 
             ### Should not appear on the website, the PROJECT-ID should be used for the URL slug, Categories and Tags sould be added to the corresponding menu
             mdfile.write(f"\n\n[draft] Add the categories and tags bellow")
-            mdfile.write(f"\n[draft] Categories : {row["Audiences"]} / {row["Langage"]} / {row["Topics"]} / {row["Type"]}")
-            mdfile.write(f"\n[draft] Tags : {row["Sub Types"]} / {row["Sub Topics"]}")
+            mdfile.write(f"\n[draft] Categories: {row["Audiences"]} / {row["Langage"]} / {row["Topics"]} / {row["Type"]}")
+            mdfile.write(f"\n[draft] Tags: {row["Sub Types"]} / {row["Sub Topics"]}")
 
         print(f"Created: {filepath}")
 
-    print(f'\nMarkdown files are avalable at : {pathlib.Path().resolve()}/output_markdown')
+    print(f'\nMarkdown files are avalable at: {pathlib.Path().resolve()}/output_markdown')
 
 print("\n#################################")
 print("# Welcome to the JSON to MD code #")
