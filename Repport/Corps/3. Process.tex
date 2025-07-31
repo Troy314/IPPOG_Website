@@ -1,16 +1,16 @@
 \chapter{Upload Process}\label{chap:process}
 
-This chapter explains the whole process of uploading Posts on the website, from filling out the Google form (Section \ref{sec:googleform}) linked to a database on Google Sheet (Section \ref{sec:googlesheet}), to running the Python code (Section \ref{sec:Python}) that formats the data into text that can be copy-pasted on the website (Section \ref{sec:upload}). A flowchart summarizing the process is available below (Fig \ref{fig:flowchart}).
+This chapter explains the whole process of uploading posts on the website, from filling out the Google form (Section \ref{sec:googleform}) linked to a database on Google Sheet (Section \ref{sec:googlesheet}), to running the Python code (Section \ref{sec:Python}) that formats the data into text that can be copy-pasted onto the website (Section \ref{sec:upload}). A flowchart summarizing the process is available below (Fig \ref{fig:flowchart}).
 
 \begin{landscape}
     \input{Image/Process/flowchart}%\label{fig:flowchart}
 \end{landscape}
 
-\section{Submitting projects through the Google form}\label{sec:googleform}
+\section{Submitting projects through the Google Form}\label{sec:googleform}
 
 To facilitate the filling of the database, it was decided to use the option of linking a Google form to a Google Sheet document. It allows to guide the user through the form (Fig. \ref{fig:gform}), and to automatically fill the database on Google Sheet.
 
-All fields of the form are detailed in Table \ref{tab:form_description}, with a description and whether the field is mandatory or not. It is important that the user follows the explicit format, in the case of the authors: "Author1,Afficiation1\textbackslash n". Otherwise the Python code formatting the database will not understand and will not recognize it. 
+All fields of the form are detailed in Table \ref{tab:form_description}, with a description and whether the field is mandatory or not. It is important that the user follows the explicit format, in the case of the authors: "Author1,Afficiation1\textbackslash n" and write the full URLs including "http". Otherwise, the Python code formatting the database will not understand and will not recognize it. 
 
 \begin{figure}[h!]
     \centering
@@ -53,7 +53,7 @@ All fields of the form are detailed in Table \ref{tab:form_description}, with a 
             \multicolumn{1}{|l|}{Year of the conference / meeting} & &  \\ \hline
             \multicolumn{1}{|l|}{URL to the presentation slides / publication} & &  \\ \hline
             \multicolumn{2}{|c|}{\textbf{Related resources}} &  \\ \hline
-            \multicolumn{1}{|l|}{Other project resources} & & \begin{tabular}[c]{@{}l@{}}The input should take the form: \\ ResourceName1(Language):URL1\\ ResourceName2(Language):URL2\\ ...\\ With one resource per line with no space, otherwise it will not be\\recognizedby the python code\end{tabular} \\ \hline
+            \multicolumn{1}{|l|}{Other project resources} & & \begin{tabular}[c]{@{}l@{}}The input should take the form: \\ ResourceName1:URL1\\ ResourceName2:URL2\\ ...\\ With one resource per line and URL beginning by http, otherwise it will not be\\recognized by the python code\end{tabular} \\ \hline
             \multicolumn{2}{|c|}{\textbf{Categories}} & check box \\ \hline
             \rowcolor[HTML]{EFEFEF}
             \multicolumn{1}{|l|}{Type of the project} & \checkmark & check box \\ \hline
@@ -69,28 +69,28 @@ All fields of the form are detailed in Table \ref{tab:form_description}, with a 
     \end{table}
 \end{landscape}
 
-\section{Registering the projects in the Google Sheet database}\label{sec:googlesheet}
+\section{Registering the projects in the Google Sheet Database}\label{sec:googlesheet}
 
 The choice of using a database was to be able to easily archive it in CERNbox or other cloud, in case of data loss, but also to enable the scientific community to submit their projects that can then be validated or completed by the core team or the person responsible for the resource portal.
 
-The database is composed of 5 pages
+The database is composed of 5 pages:
 \begin{itemize}
     \item \textit{Réponse au formulaire 1}: The raw submitted data from the Google Form appears here.
     \item \textit{Work in progress}: Is a transit page where the raw data can be modified without touching the \textit{Full database}.
-    \item \textit{Full database}: Is the actual data (Table \ref{tab:database_description}). Few columns need to be modified manually by the user: 
+    \item \textit{Full database}: Is the actual data (Table \ref{tab:database_description}). A few columns need to be modified manually by the user: 
     \begin{itemize}
         \item First, the user should clear the content of the first column "Horodateur" from \textit{Réponse au formulaire 1} and copy and paste the data to a new empty line.
         \item Column A "ID" should be given an unused ID.
         \item Columns B to T should already be filled.
         \item Column U "Sub Type" and V "Sub Topics" should be given related tags according to the taxonomy (Sec. \ref{ssec:categorization}).
-        \item Column W "Wordpress page" should automatically update with the ID from column A, if not the user can copy the formula from the cell above.
-        \item Column X "State" should be updated by the used according to the state of the Wordpress page (note that the state should be "OK" for the line to be read by the python code (Section \ref{sec:Python}).
+        \item Column W "WordPress page" should automatically update with the ID from column A, if not, the user can copy the formula from the cell above.
+        \item Column X "State" should be updated by the user according to the state of the WordPress page (note that the state should be "OK" for the line to be read by the Python code (Section \ref{sec:Python}).
     \end{itemize}
     \item \textit{Proposition}: Is a list of projects that were either rejected or put aside for later.
     \item \textit{Copy of Full database}: Is a copy of the \textit{Full database} page.
 \end{itemize}
 
-The database is then read by a python code (Section \ref{sec:Python}) that produce one formatted markdown file per project.
+The database is then read by a Python code (Section \ref{sec:Python}) that produces one formatted markdown file per project.
 
 \begin{landscape}
     \begin{table}[]
@@ -125,7 +125,7 @@ The database is then read by a python code (Section \ref{sec:Python}) that produ
             \multicolumn{1}{|c|}{U} & \multicolumn{1}{l|}{Sub Types} & \multicolumn{1}{c|}{} & \checkmark & Should be completed using the types map \\ \hline
             \multicolumn{1}{|c|}{V} & \multicolumn{1}{l|}{Sub Topics} & \multicolumn{1}{c|}{} & \checkmark & Should be completed using the topics map \\ \hline
             \multicolumn{4}{|c|}{\textbf{Private}} &  \\ \hline
-            \multicolumn{1}{|c|}{W} & \multicolumn{1}{l|}{Wordpress page} & \multicolumn{1}{c|}{} & \checkmark & URL to the wordpress page: https://ippog-resources-portal.web.cern.ch/project-\{Column A\} \\ \hline
+            \multicolumn{1}{|c|}{W} & \multicolumn{1}{l|}{WordPress page} & \multicolumn{1}{c|}{} & \checkmark & URL to the WordPress page: https://ippog-resources-portal.web.cern.ch/project-\{Column A\} \\ \hline
             \multicolumn{1}{|c|}{X} & \multicolumn{1}{l|}{State} & \multicolumn{1}{c|}{} & \checkmark & Should be updated depending (see above) \\ \hline
         \end{tabularx}
         \caption{Description of the database per columns}
@@ -141,10 +141,10 @@ The code is available in github:
 \end{lstlisting}
 
 \begin{itemize}
-    \item \gray{dictionaries/member\_dictionary.py} is a dictionary which take the entry from Column T "Related IPPOG member" and return the url to the corresponding page in the IPPOG website\footnote{Members and people of the IPPOG Collaboration: \href{https://ippog.org/about/ippog-members-and-people}{https://ippog.org/about/ippog-members-and-people}}
-    \item \gray{run\_local.py} \& \gray{run\_online.py} files are the codes that create the markdown files
-    \item \gray{output\_markdown/} is the filder in which markdowns are created
-    \item \gray{exemple\_file.csv} is a document that has the format of the database and can be used to test the run codes 
+    \item \gray{dictionaries/member\_dictionary.py} is a dictionary which take the entry from Column T "Related IPPOG member" and return the url to the corresponding page in the IPPOG website\footnote{Members and people of the IPPOG Collaboration: \href{https://ippog.org/about/ippog-members-and-people}{https://ippog.org/about/ippog-members-and-people}}.
+    \item \gray{run\_local.py} \& \gray{run\_online.py} files are the codes that create the markdown files.
+    \item \gray{output\_markdown/} is the folder in which markdowns are created.
+    \item \gray{exemple\_file.csv} is an exemple database that can be used to test the run codes. 
 \end{itemize}
 
 \subsection{Dependencies}\label{dependencies}
@@ -184,7 +184,6 @@ Two version of the code are available
     \subsubsection*{Local mode}
     
         /!\textbackslash \ Require to download the database available on Google sheet\footnote{Google Sheet: \href{https://docs.google.com/spreadsheets/d/1x_SdxdlHwG8chH77WqrTAAgijY2XBY3nPIi2p3TKqzs/edit?gid=1297224389\#gid=1297224389}{https://shorturl.at/sHBrz}} as a CSV file\newline
-        \vspace{.5cm}
         /!\textbackslash \ The CSV file should be put in the same folder as the run file
     
         To run the program, simply run
@@ -200,18 +199,18 @@ Once you run the code, you have two options:
     \item Enter a number, the ID of a project, to force the code to run through a specific project
 \end{itemize}
 
-The codes finally produces a \textit{output\_markdown} folder in which each markdown files correspond to a project. The text of each of them should be  copied in a new Post of the website.
+The code finally produces an \textit{output\_markdown} folder in which each markdown file corresponds to a project. The text of each of them should be copied into a new post of the website.
 
 \subsection{Enabling Google Sheets API}\label{ssec:API}
-This section is about how to use the "online" versions of the code, using the API of Google
-/!\textbackslash \ If you are using the "local" version of the code or if you already have the JSON file, you can skip this part
+This section is about how to use the "online" versions of the code, using the Google API.
+/!\textbackslash \ If you are using the "local" version of the code, or if you already have the JSON file, you can skip this part.
 
 To extract the data from the Google Sheets database, the Google Sheets API needs to be enabled and obtain credentials\footnote{Courtesy to Mayank Gupta: \href{https://dev.to/mayankcse/google-sheets-integration-with-python-a-step-by-step-guide-2mdb}{dev.to/mayankcse/google-sheets-integration-with-python-a-step-by-step-guide-2mdb}}.
 
 \subsubsection*{Enable API Access}
 
 \begin{enumerate}
-    \item Go to the Google Cloud Console\footnote{\href{https://console.cloud.google.com/}{Google Cloud Console: https://console.cloud.google.com/}}.
+    \item Go to the Google Cloud Console\footnote{Google Cloud Console: \href{https://console.cloud.google.com/}{https://console.cloud.google.com/}}.
     \item Create a new project (or select an existing one).
     \item Navigate to APIs \& Services > Library.
     \item Search for Google Sheets API and enable it.
@@ -239,7 +238,7 @@ To extract the data from the Google Sheets database, the Google Sheets API needs
 
 \section{Uploading the projects on the Website}\label{sec:upload}
 
-The following section will cover how to upload the data generated by the python code on the website. However, it will not explain how to maintain the WordPress infrastructure generally. More information can be found at CERN WordPress Documentation\footnote{CERN WordPress Documentation: \href{https://wordpress.docs.cern.ch/}{https://wordpress.docs.cern.ch/}} and in the dedicated Mattermost channel\footnote{Mattermost channel: \href{https://mattermost.web.cern.ch/it-dep/channels/wordpress}{https://mattermost.web.cern.ch/it-dep/channels/wordpress}}.
+The following section will cover how to upload the data generated by the Python code onto the website. However, it will not explain how to maintain the WordPress infrastructure generally. More information can be found at CERN WordPress Documentation\footnote{CERN WordPress Documentation: \href{https://wordpress.docs.cern.ch/}{https://wordpress.docs.cern.ch/}} and in the dedicated Mattermost channel\footnote{Mattermost channel: \href{https://mattermost.web.cern.ch/it-dep/channels/wordpress}{https://mattermost.web.cern.ch/it-dep/channels/wordpress}}.
 
 A video guide\footnote{Video guide: \href{https://www.youtube.com/watch?v=OQ6QYBG_MYU}{https://www.youtube.com/watch?v=OQ6QYBG\_MYU}} covering the uploading steps is also available. 
 
