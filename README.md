@@ -2,15 +2,11 @@
 
 <p align="center">
   <a href="https://ippog-resources-portal.web.cern.ch/">
-    <img src="media/IPPOG_logo.png" alt="IPPOG logo">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://ippog-resources-portal.web.cern.ch/">
     <img src="media/banner_IPPOG.png" alt="IPPOG banner">
   </a>
 </p>
+
+Made as part of the Administractive Student Contract of Hector PILLOT  (01/03/25 - 31/07/25)
 
 ## The project
 The “Resource portal” was created in 2025, at the request of the HEP community during the ICHEP
@@ -65,6 +61,12 @@ And input the name of the database CSV file
 ## Upload process
 The upload process is detailed in the video bellow : 
 [![Uploading](https://img.youtube.com/vi/OQ6QYBG_MYU/0.jpg)](https://www.youtube.com/watch?v=OQ6QYBG_MYU)
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=OQ6QYBG_MYU">
+    <img src="https://img.youtube.com/vi/OQ6QYBG_MYU/0.jpg" alt="Upload project on the IPPOG Resource Portal">
+  </a>
+</p>
 
 ## Taxonomy
 Categories and tags work in the following way:
