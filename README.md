@@ -27,7 +27,7 @@ The [Google Sheet](https://docs.google.com/spreadsheets/d/1x_SdxdlHwG8chH77WqrTA
 
 The user can either export the database as a CSV file (see `exemple_file.csv`) and run the code via `run_local.py` or enable the Google API to directly work with the online database and run the code via `run_online.py`. The code produces, for each line of the database, one markdown file in a directory named `output_markdown/`. These files are already formatted to be copy/pasted into the WordPress website.
 
-The flowchart detailing the upload process is as follows :
+The flowchart detailing the upload process is as follows:
 
 ![Flowchart](media/Flowchart.svg)
 
@@ -59,8 +59,7 @@ And input the name of the database CSV file
 
 
 ## Upload process
-The upload process is detailed in the video bellow : 
-[![Uploading](https://img.youtube.com/vi/OQ6QYBG_MYU/0.jpg)](https://www.youtube.com/watch?v=OQ6QYBG_MYU)
+The upload process is detailed in the video bellow: 
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=OQ6QYBG_MYU">
